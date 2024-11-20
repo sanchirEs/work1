@@ -1,15 +1,17 @@
 "use client";
 import { useContextElement } from "@/context/Context";
-import { products44 } from "@/data/products/baby";
 import { Autoplay, Navigation } from "swiper/modules";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default function Clothing() {
+export default function Campaigns() {
   const { toggleWishlist, isAddedtoWishlist } = useContextElement();
   const { setQuickViewItem } = useContextElement();
   const { addProductToCart, isAddedToCartProducts } = useContextElement();
+  const [campaigns, setCampaigns] = useState([]);
+
   const swiperOptions = {
     autoplay: {
       delay: 5000,
@@ -41,76 +43,88 @@ export default function Clothing() {
         spaceBetween: 30,
       },
       1200: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         slidesPerGroup: 1,
         spaceBetween: 40,
       },
     },
   };
+
+  useEffect(() => {
+    // Fetch live campaigns data from the API
+    const fetchCampaigns = async () => {
+      const response = await fetch("/api/campaigns"); // Change to your endpoint
+      const data = await response.json();
+      setCampaigns(data);
+    };
+    fetchCampaigns();
+  }, []);
+
   return (
     <section className="product-carousel container">
       <div className="d-flex align-items-center justify-content-md-between flex-wrap mb-3 pb-xl-2 mb-xl-4">
         <h2 className="h3 fw-bold theme-color text-uppercase">
-          Children's Clothing
+          Live Campaigns
         </h2>
 
         <Link
           className="btn-link btn-link_md default-underline text-uppercase fw-semi-bold theme-color-secondary"
-          href="/shop-1"
+          href="/campaigns"
         >
-          See All Products
+          See All Campaigns
         </Link>
       </div>
 
       <div className="row">
-        <div className="col-sm-6 col-md-4 col-lg-3 col-xl-20per">
+        {/* <div className="col-sm-6 col-md-4 col-lg-3 col-xl-20per">
           <div className="position-relative w-100 h-sm-100 border-radius-4 overflow-hidden minh-240 mb-4 mb-sm-0">
             <div
               className="background-img"
               style={{
-                backgroundImage: `url(/assets/images/home/demo21/banner-3.jpg)`,
+                backgroundImage: "url(/assets/images/home/demo21/banner-4.jpg)",
               }}
             ></div>
             <div className="content_abs top-0 mx-3 mt-3 mt-xl-4 pt-2 px-2">
               <p className="mb-1 text-uppercase fw-medium">
-                Sale Up To 30% Off
+                Support Our Causes
               </p>
               <h3 className="fs-25 fw-bold text-uppercase fw-bold mb-3 theme-color-third">
-                Popular Infants Goods
+                LIVE Campaigns
               </h3>
               <Link
-                href="/shop-1"
+                href="/petitions"
                 className="btn btn-outline-primary border-0 fs-12 btn-40 border-circle text-uppercase theme-bg-color-secondary text-white px-4 py-2 fw-semi-bold d-inline-flex align-items-center"
               >
-                <span>Shop Now</span>
+                <span>Explore</span>
               </Link>
             </div>
           </div>
-        </div>
-        <div className="col-sm-6 col-md-8 col-lg-9 col-xl-80per">
+        </div> */}
+        <div className="col-sm-6 col-md-12 col-lg-12 col-xl-12">
           <div id="product_carousel_3" className="position-relative">
             <Swiper
               {...swiperOptions}
               className="swiper-container js-swiper-slider"
             >
-              {products44.map((elm, i) => (
+              {campaigns.map((campaign, i) => (
                 <SwiperSlide key={i} className="swiper-slide product-card">
                   <div className="pc__img-wrapper">
-                    <Link href={`/product1_simple/${elm.id}`}>
+                    <Link href={`/product/${campaign.product.id}`}>
                       <Image
                         loading="lazy"
-                        src={elm.imgSrc}
+                        // src={campaign.product.imageUrl} // Replace with actual image field from API
+                        src={"/assets/images/home/demo21/product-10.jpg"} // Replace with actual image field from API
                         width="255"
                         height="270"
-                        alt="image"
+                        alt={campaign.product.name}
                         className="pc__img"
                       />
                     </Link>
                     <button
                       className="pc__atc btn btn-lg anim_appear-bottom btn btn-50 theme-bg-color-secondary text-white position-absolute border-0 text-uppercase fw-medium js-add-cart js-open-aside d-flex align-items-center justify-content-center gap-2 lh-1 border-circle"
-                      onClick={() => addProductToCart(elm.id)}
+                      onClick={() => addProductToCart(campaign.product.id)}
                       title={
-                        isAddedToCartProducts(elm.id)
+                        isAddedToCartProducts(campaign.product.id)
                           ? "Already Added"
                           : "Add to Cart"
                       }
@@ -125,14 +139,14 @@ export default function Clothing() {
                       >
                         <use
                           href={`${
-                            isAddedToCartProducts(elm.id)
+                            isAddedToCartProducts(campaign.product.id)
                               ? "#icon_cart_added"
                               : "#icon_cart"
                           }`}
                         ></use>
                       </svg>
                       <span className="d-block pt-1">
-                        {isAddedToCartProducts(elm.id)
+                        {isAddedToCartProducts(campaign.product.id)
                           ? "Already Added"
                           : "Add To Cart"}
                       </span>
@@ -142,7 +156,7 @@ export default function Clothing() {
                         className="btn btn-round-sm btn-hover-red d-block border-1 text-uppercase mb-2 js-quick-view theme-hover-bg"
                         data-bs-toggle="modal"
                         data-bs-target="#quickView"
-                        onClick={() => setQuickViewItem(elm)}
+                        onClick={() => setQuickViewItem(campaign.product)}
                         title="Quick view"
                       >
                         <svg
@@ -157,9 +171,9 @@ export default function Clothing() {
                       </button>
                       <button
                         className={`btn btn-round-sm btn-hover-red d-block border-1 text-uppercase js-add-wishlist ${
-                          isAddedtoWishlist(elm.id) ? "active" : ""
+                          isAddedtoWishlist(campaign.product.id) ? "active" : ""
                         } theme-hover-bg`}
-                        onClick={() => toggleWishlist(elm.id)}
+                        onClick={() => toggleWishlist(campaign.product.id)}
                         title="Add To Wishlist"
                       >
                         <svg
@@ -176,27 +190,29 @@ export default function Clothing() {
                   </div>
 
                   <div className="pc__info position-relative text-center">
-                    <p className="pc__category">{elm.category}</p>
+                    <p className="pc__category">{campaign.status}</p>
                     <h6 className="pc__title mb-2 fs-15 fw-semi-bold">
                       <a
-                        href={`/product1_simple/${elm.id}`}
+                        href={`/product/${campaign.product.id}`}
                         className="theme-color"
                       >
-                        {elm.title}
+                        {campaign.product.name}
                       </a>
                     </h6>
                     <div className="product-card__price d-flex align-items-center justify-content-center">
                       <span className="money price theme-color-secondary fw-bold font-heading">
-                        ${elm.price}
+                        ${campaign.product.price}
+                      </span>
+                    </div>
+                    <div className="product-card__price d-flex align-items-center justify-content-center">
+                      <span className="money price theme-color-secondary fw-bold font-heading">
+                        {campaign.endDate}
                       </span>
                     </div>
                   </div>
                 </SwiperSlide>
               ))}
-
-              {/* <!-- /.swiper-wrapper --> */}
             </Swiper>
-            {/* <!-- /.swiper-container js-swiper-slider --> */}
 
             <div className="cursor-pointer products-carousel__prev position-absolute top-50 left-0 d-flex align-items-center justify-content-center rounded-circle border-1 bg-grey-eeeeee navigation-sm mt-0">
               <svg
@@ -221,7 +237,6 @@ export default function Clothing() {
               </svg>
             </div>
           </div>
-          {/* <!-- /.position-relative --> */}
         </div>
       </div>
     </section>

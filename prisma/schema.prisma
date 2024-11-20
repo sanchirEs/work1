@@ -1,0 +1,210 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Customers and Orders
+model Customer {
+  id            Int             @id @default(autoincrement())
+  email         String          @unique
+  name          String
+  password      String
+  role          UserRole        @default(CUSTOMER)
+  createdAt     DateTime        @default(now())
+  orders        Order[]
+  cart          Cart?
+  payments      Payment[]
+  tickets       SupportTicket[]
+  notifications Notification[]
+}
+
+// Cart and Cart Items
+model Cart {
+  id         Int        @id @default(autoincrement())
+  customerId Int        @unique
+  cartItems  CartItem[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  customer   Customer   @relation(fields: [customerId], references: [id], onDelete: Cascade)
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  cartId    Int
+  productId Int
+  quantity  Int      @default(1)
+  addedAt   DateTime @default(now())
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([cartId, productId])
+}
+
+// Products, Orders, and Production Tracking
+model Product {
+  id               Int               @id @default(autoincrement())
+  name             String
+  description      String
+  price            Decimal
+  minBatchQty      Int               @default(100)
+  orderCount       Int               @default(0)
+  orders           Order[]
+  productionStages ProductionStage[]
+  cartItems        CartItem[]
+  inventory        ProductInventory?
+  batches          ProductionBatch[]
+
+  Campaign Campaign[]
+}
+
+model Campaign {
+  id          Int               @id @default(autoincrement())
+  productId   Int               // Make productId required again
+  startDate   DateTime
+  endDate     DateTime
+  status      CampaignStatus    @default(ACTIVE)
+  type        CampaignType      @default(PLUSH)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  product     Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+
+
+model ProductInventory {
+  id        Int      @id @default(autoincrement())
+  productId Int      @unique
+  quantity  Int // Stock level of this product
+  updatedAt DateTime @default(now()) @updatedAt
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id               Int               @id @default(autoincrement())
+  customerId       Int
+  productId        Int
+  quantity         Int
+  status           OrderStatus       @default(PENDING)
+  payment          Payment?
+  batch            ProductionBatch?  @relation(fields: [batchid], references: [id])
+  batchid          Int?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  productionStages ProductionStage[]
+  customer         Customer          @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product          Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
+  notifications    Notification[]
+}
+
+model Payment {
+  id         Int           @id @default(autoincrement())
+  customerId Int
+  orderId    Int           @unique
+  amount     Decimal
+  provider   String
+  status     PaymentStatus @default(PENDING)
+  createdAt  DateTime      @default(now())
+  customer   Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  order      Order         @relation(fields: [orderId], references: [id])
+
+  @@index([status])
+}
+
+// Production Batches for Minimum Orders
+model ProductionBatch {
+  id            Int      @id @default(autoincrement())
+  productId     Int
+  totalQuantity Int      @default(0) // Total items in batch
+  isReady       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  orders        Order[] // Orders part of this batch
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+// Production Stages
+model ProductionStage {
+  id        Int              @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  stage     ProductionStatus
+  updatedAt DateTime         @default(now())
+  order     Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product          @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+// Notifications for Customer Updates
+model Notification {
+  id         Int      @id @default(autoincrement())
+  customerId Int
+  orderId    Int?
+  message    String
+  sentAt     DateTime @default(now())
+  readStatus Boolean  @default(false)
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  order      Order?   @relation(fields: [orderId], references: [id], onDelete: SetNull)
+}
+
+// Support Ticket System for Customer Feedback
+model SupportTicket {
+  id         Int          @id @default(autoincrement())
+  customerId Int
+  subject    String
+  message    String
+  status     TicketStatus @default(OPEN)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  customer   Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+}
+
+// Enums for User Roles, Order Status, Production Stages, Payment Status, and Support Ticket Status
+enum UserRole {
+  CUSTOMER
+  ADMIN
+  SUPPORT
+}
+
+enum OrderStatus {
+  PENDING
+  IN_PROGRESS
+  READY_FOR_PRODUCTION
+  COMPLETED
+}
+
+enum ProductionStatus {
+  DESIGN_PHASE
+  PRE_PRODUCTION
+  IN_PRODUCTION
+  QUALITY_CHECK
+  PACKAGED
+  SHIPPED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum CampaignStatus {
+  ACTIVE
+  INACTIVE
+  COMPLETED
+}
+
+enum CampaignType {
+  PLUSH
+  PETITION
+  COMING_SOON
+}

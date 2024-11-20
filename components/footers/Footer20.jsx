@@ -14,7 +14,7 @@ import {
 export default function Footer20() {
   return (
     <footer className="footer footer_type_2 bordered">
-      <div className="footer-top container">
+      {/* <div className="footer-top container">
         <div className="block-newsletter">
           <h3 className="block__title text-uppercase fw-bold theme-color">
             DON'T MISS THE CHANGE TO GET 40% OFF
@@ -38,7 +38,7 @@ export default function Footer20() {
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
       {/* <!-- /.footer-top container --> */}
 
       <div className="footer-middle container">
@@ -46,22 +46,26 @@ export default function Footer20() {
           <div className="footer-column footer-store-info col-12 mb-4 mb-lg-0">
             <div className="logo">
               <Link href="/">
-                <Image
+                {/* <Image
                   src="/assets/images/logo-baby.png"
                   width={112}
                   height={28}
                   alt="Uomo"
                   className="logo__image d-block"
-                />
+                /> */}
+                <h2>LOGO</h2>
               </Link>
             </div>
             {/* <!-- /.logo --> */}
             <p className="footer-address">
-              1418 River Drive, Suite 35 Cottonhall, CA 9622 United States
+              1418 River Drive, Suite 35 Cottonhall, CA 9622 United sign up to
+              the States
             </p>
 
             <p className="m-0">
-              <strong className="fw-medium">sale@uomo.com</strong>
+              <strong className="fw-medium">
+                sanchirenkhamgalan@gmail.com
+              </strong>
             </p>
             <p>
               <strong className="fw-medium">+1 246-345-0695</strong>

@@ -143,7 +143,7 @@ export const othersMenuItems = [
   },
   {
     id: 2,
-    href: "/login_register",
+    href: "/login",
     title: "Login / Register",
   },
   {
@@ -179,34 +179,83 @@ export const othersMenuItems = [
 ];
 
 export const dashboardMenuItems = [
+  // {
+  //   id: 5,
+  //   href: "/account_dashboard",
+  //   title: "Dashboard",
+  // },
   {
-    id: 1,
-    href: "/account_dashboard",
-    title: "Dashboard",
-  },
-  {
-    id: 2,
+    id: 6,
     href: "/account_orders",
     title: "Orders",
   },
+  // {
+  //   id: 3,
+  //   href: "/account_edit_address",
+  //   title: "Addresses",
+  // },
   {
-    id: 3,
-    href: "/account_edit_address",
-    title: "Addresses",
-  },
-  {
-    id: 4,
+    id: 7,
     href: "/account_edit",
     title: "Account Details",
   },
   {
-    id: 5,
+    id: 8,
     href: "/account_wishlist",
     title: "Wishlist",
   },
   {
-    id: 6,
-    href: "/login_register",
+    id: 9,
+    href: "/login",
+    title: "Logout",
+  },
+];
+
+// Define admin-specific menu items
+export const adminMenuItems = [
+  {
+    id: 1,
+    href: "/admin/order_management",
+    title: "Order Management",
+  },
+  {
+    id: 2,
+    href: "/admin/user_management",
+    title: "User Management",
+  },
+  {
+    id: 3,
+    href: "/admin/product_management",
+    title: "Product Management",
+  },
+  // {
+  //   id: 5,
+  //   href: "/account_dashboard",
+  //   title: "Dashboard",
+  // },
+  // {
+  //   id: 6,
+  //   href: "/account_orders",
+  //   title: "Orders",
+  // },
+  // {
+  //   id: 3,
+  //   href: "/account_edit_address",
+  //   title: "Addresses",
+  // },
+  {
+    id: 7,
+    href: "/account_edit",
+    title: "Account Details",
+  },
+  // {
+  //   id: 8,
+  //   href: "/account_wishlist",
+  //   title: "Wishlist",
+  // },
+  {
+    id: 9,
+    href: "/login",
     title: "Logout",
   },
 ];

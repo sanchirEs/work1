@@ -23,6 +23,7 @@ import ProductDescription from "@/components/asides/ProductDescription";
 import ProductAdditionalInformation from "@/components/asides/ProductAdditionalInformation";
 import ProductReviews from "@/components/asides/ProductReviews";
 import MobileFooter1 from "@/components/footers/MobileFooter1";
+import { SessionProvider } from "next-auth/react";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -33,74 +34,42 @@ export default function RootLayout({ children }) {
       });
     }
   }, []);
+  
   return (
     <html lang="en">
       <head>
+        {/* Head links and styles */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Poppins:wght@400&display=swap"
-          rel="stylesheet"
-        />
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Average+Sans:400"
-          rel="stylesheet"
-          property="stylesheet"
-          media="all"
-          type="text/css"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        {/* Add other font links here */}
       </head>
       <body>
-        <Svgs />
-        <Context>
-          <MobileHeader />
-          {children}
-          <MobileFooter1 />
-          {/* //modals and asides */}
-          <LoginFormPopup />
-          <QuickView />
-          <NewsLetter />
-          <CookieContainer />
-          <SizeGuide />
-          <Delivery />
-          <CartDrawer />
-          <SiteMap />
-          <CustomerLogin />
-          <ShopFilter />
-          <ProductDescription />
-          <ProductAdditionalInformation />
-          <ProductReviews />
-        </Context>
-        <div className="page-overlay" id="pageOverlay"></div>
-        <ScrollTop />
+        <SessionProvider> {/* Wrap the entire application */}
+          <Svgs />
+          <Context>
+            <MobileHeader />
+            {children}
+            <MobileFooter1 />
+            {/* Modals and Asides */}
+            <LoginFormPopup />
+            <QuickView />
+            {/* <NewsLetter /> */}
+            {/* <CookieContainer /> */}
+            <SizeGuide />
+            <Delivery />
+            <CartDrawer />
+            <SiteMap />
+            <CustomerLogin />
+            <ShopFilter />
+            <ProductDescription />
+            <ProductAdditionalInformation />
+            <ProductReviews />
+          </Context>
+          <div className="page-overlay" id="pageOverlay"></div>
+          <ScrollTop />
+        </SessionProvider>
       </body>
     </html>
   );

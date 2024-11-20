@@ -66,7 +66,7 @@ export default function LoginFormPopup() {
             <div className="customer-option mt-4 text-center">
               <span className="text-secondary">No account yet?</span>
               <Link
-                href="/login_register#register-tab"
+                href="/login"
                 className="btn-text js-show-register"
               >
                 Create Account

@@ -30,7 +30,7 @@ export default function Footer22() {
               </li>
               <li className="sub-menu__item">
                 <Link
-                  href="/login_register"
+                  href="/login"
                   className="menu-link menu-link_us-s fs-13"
                 >
                   Register

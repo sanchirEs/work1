@@ -7,7 +7,7 @@ export default function Instagram() {
     <section className="instagram container">
       <div className="d-flex justify-content-center flex-wrap mb-3 mb-xl-5">
         <h2 className="h3 fw-bold theme-color text-uppercase">
-          UOMO Baby on Instagram
+          Pictures from INSTAGRAM
         </h2>
       </div>
 

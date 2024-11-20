@@ -31,7 +31,7 @@ export default function ResetPassword() {
 
           <div className="customer-option mt-4 text-center">
             <span className="text-secondary">Back to</span>
-            <Link href="/login_register" className="btn-text js-show-register">
+            <Link href="/login" className="btn-text js-show-register">
               Login
             </Link>
           </div>
