@@ -50,7 +50,7 @@
 */
 /* Reset Browsers
 -------------------------------------------------------------- */
-html,
+/* html,
 body,
 div,
 span,
@@ -158,7 +158,7 @@ section {
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 62%;
 	overflow-y: scroll;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -622,7 +622,7 @@ h6,
 .dashboard-h6 {
 	font-size: 18px;
 	line-height: 25px;
-}
+} */
 
 /* Extra classes
 -------------------------------------------------------------- */
@@ -7292,7 +7292,6 @@ select.dashboard-h40 {
 }
 
 [data-image-menu-background=image-menu-background-1] .dashboard-section-menu-left {
-	/* background-image: url(./../images/bg-menu/img-1.dashboard-jpg); */
 	background-image: url(../public/images/bg-menu/img-1.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
