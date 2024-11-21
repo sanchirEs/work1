@@ -1,11 +1,12 @@
-import ProductList from "@/components/admin/product-list/page";
 import Footer1 from "@/components/footers/Footer1";
 
 import Header1 from "@/components/headers/Header1";
-import HeaderAdmin from "@/components/headers/HeaderAdmin";
 import Dashboard from "@/components/otherPages/Dashboard";
 import DashboardSidebar from "@/components/otherPages/DashboardSidebar";
 import React from "react";
+import OrderList from "@/components/admin/order-list/page";
+import HeaderAdmin from "@/components/headers/HeaderAdmin";
+import AddProduct from "@/components/admin/add-product/page";
 
 export const metadata = {
   title: "Dashboard-account || Uomo eCommerce React Nextjs Template",
@@ -14,6 +15,7 @@ export const metadata = {
 export default function AccountPage() {
   return (
     <>
+      {/* <Header1 /> */}
       <HeaderAdmin />
       <main className="page-wrapper">
         {/* <div className="mb-4 pb-4"></div> */}
@@ -22,7 +24,7 @@ export default function AccountPage() {
           <div className="row">
             {/* <DashboardSidebar /> */}
             {/* <Dashboard /> */}
-            <ProductList />
+            <AddProduct />
           </div>
         </section>
       </main>

@@ -1,36 +1,45 @@
-// app/order-list/page.jsx
+// app/product-list/page.jsx
 'use client';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export default function OrderList() {
-  const [orders, setOrders] = useState([]);
+export default function ProductList() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
-    async function fetchOrders(page = 1, search = '') {
+    async function fetchProducts(page = 1, search = '', size = 10) {
       setLoading(true);
       try {
         const res = await fetch(
-          `/api/orders?page=${page}&search=${encodeURIComponent(search)}`
+          `/api/products?page=${page}&search=${encodeURIComponent(
+            search
+          )}&pageSize=${size}`
         );
         const data = await res.json();
-        setOrders(data.orders);
+        setProducts(data.products);
         setTotalPages(data.totalPages);
         setCurrentPage(data.currentPage);
       } catch (error) {
-        console.error('Error fetching orders:', error);
+        console.error('Error fetching products:', error);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchOrders(currentPage, searchQuery);
-  }, [currentPage, searchQuery]);
+    fetchProducts(currentPage, searchQuery, pageSize);
+  }, [currentPage, searchQuery, pageSize]);
+
+  const handlePageSizeChange = (e) => {
+    setPageSize(parseInt(e.target.value, 10));
+    setCurrentPage(1);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -38,10 +47,28 @@ export default function OrderList() {
 
   return (
     <>
-      {/* <Layout breadcrumbTitleParent="Order" breadcrumbTitle="Order List"> */}
+      {/* <Layout breadcrumbTitleParent="Ecommerce" breadcrumbTitle="Product List"> */}
       <div className="dashboard-wg-box">
+        <div className="dashboard-title-box">
+          <i className="dashboard-icon-coffee" />
+          <div className="dashboard-body-text">
+            Tip search by Product ID: Each product is provided with a unique ID,
+            which you can rely on to find the exact product you need.
+          </div>
+        </div>
         <div className="dashboard-flex items-center justify-between gap10 flex-wrap">
           <div className="dashboard-wg-filter flex-grow">
+            <div className="dashboard-show">
+              <div className="dashboard-text-tiny">Showing</div>
+              <div className="dashboard-select">
+                <select value={pageSize} onChange={handlePageSizeChange}>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <div className="dashboard-text-tiny">entries</div>
+            </div>
             <form
               className="dashboard-form-search"
               onSubmit={(e) => {
@@ -68,74 +95,76 @@ export default function OrderList() {
               </div>
             </form>
           </div>
-          <Link className="dashboard-tf-button style-1 w208" href="/order-detail">
-            <i className="dashboard-icon-file-text" />
-            Export all orders
+          <Link
+            className="dashboard-tf-button style-1 w208"
+            href="/add-product"
+          >
+            <i className="dashboard-icon-plus" />
+            Add new
           </Link>
         </div>
-        <div className="dashboard-wg-table table-all-category">
+        <div className="dashboard-wg-table table-product-list">
           <ul className="dashboard-table-title flex gap20 mb-14">
-            {/* Table Headers */}
             <li>
               <div className="dashboard-body-title">Product</div>
             </li>
             <li>
-              <div className="dashboard-body-title">Order ID</div>
+              <div className="dashboard-body-title">Product ID</div>
             </li>
             <li>
               <div className="dashboard-body-title">Price</div>
             </li>
             <li>
-              <div className="dashboard-body-title">Quantity</div>
+              <div className="dashboard-body-title">Min Batch Qty</div>
             </li>
             <li>
-              <div className="dashboard-body-title">Payment</div>
+              <div className="dashboard-body-title">Order Count</div>
             </li>
             <li>
-              <div className="dashboard-body-title">Status</div>
-            </li>
-            <li>
-              <div className="dashboard-body-title">Tracking</div>
+              <div className="dashboard-body-title">Stock</div>
             </li>
             <li>
               <div className="dashboard-body-title">Action</div>
             </li>
           </ul>
           <ul className="dashboard-flex flex-column">
-            {orders.map((order) => (
-              <li key={order.id} className="dashboard-product-item gap14">
+            {products.map((product) => (
+              <li key={product.id} className="dashboard-product-item gap14">
                 <div className="dashboard-image no-bg">
-                  <img src="/images/products/51.png" alt="" />
+                  <img src="/images/products/41.png" alt="" />
                   {/* Replace with dynamic image if available */}
                 </div>
                 <div className="dashboard-flex items-center justify-between gap20 flex-grow">
                   <div className="dashboard-name">
                     <Link
-                      href={`/product/${order.product.id}`}
+                      href={`/product/${product.id}`}
                       className="dashboard-body-title-2"
                     >
-                      {order.product.name}
+                      {product.name}
                     </Link>
                   </div>
-                  <div className="dashboard-body-text">#{order.id}</div>
+                  <div className="dashboard-body-text">#{product.id}</div>
                   <div className="dashboard-body-text">
-                    ${order.product.price.toFixed(2)}
+                    ${parseFloat(product.price).toFixed(2)}
                   </div>
-                  <div className="dashboard-body-text">{order.quantity}</div>
                   <div className="dashboard-body-text">
-                    {order.payment
-                      ? `$${order.payment.amount.toFixed(2)}`
-                      : 'N/A'}
+                    {product.minBatchQty}
+                  </div>
+                  <div className="dashboard-body-text">
+                    {product.orderCount}
                   </div>
                   <div>
                     <div
-                      className={`dashboard-block-${order.status.toLowerCase()}`}
+                      className={
+                        product.inventory && product.inventory.quantity > 0
+                          ? 'dashboard-block-available'
+                          : 'dashboard-block-not-available'
+                      }
                     >
-                      {order.status}
+                      {product.inventory && product.inventory.quantity > 0
+                        ? 'In stock'
+                        : 'Out of stock'}
                     </div>
-                  </div>
-                  <div>
-                    <div className="dashboard-block-tracking">Tracking</div>
                   </div>
                   <div className="dashboard-list-icon-function">
                     <div className="dashboard-item eye">
