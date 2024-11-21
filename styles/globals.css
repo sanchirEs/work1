@@ -7293,6 +7293,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-1] .dashboard-section-menu-left {
 	/* background-image: url(./../images/bg-menu/img-1.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-1.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7300,7 +7301,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-1] .dashboard-section-menu-left>.dashboard-box-logo {
 	background-color: unset;
-	/* background-image: url(./../images/bg-menu/img-1.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-1.jpg);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7315,7 +7316,7 @@ select.dashboard-h40 {
 }
 
 [data-image-menu-background=image-menu-background-2] .dashboard-section-menu-left {
-	/* background-image: url(./../images/bg-menu/img-2.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-2.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7323,7 +7324,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-2] .dashboard-section-menu-left>.dashboard-box-logo {
 	background-color: unset;
-	/* background-image: url(./../images/bg-menu/img-2.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-2.jpg);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7338,7 +7339,7 @@ select.dashboard-h40 {
 }
 
 [data-image-menu-background=image-menu-background-3] .dashboard-section-menu-left {
-	/* background-image: url(./../images/bg-menu/img-3.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-3.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7346,7 +7347,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-3] .dashboard-section-menu-left>.dashboard-box-logo {
 	background-color: unset;
-	/* background-image: url(./../images/bg-menu/img-3.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-3.jpg);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7361,7 +7362,7 @@ select.dashboard-h40 {
 }
 
 [data-image-menu-background=image-menu-background-4] .dashboard-section-menu-left {
-	/* background-image: url(./../images/bg-menu/img-4.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-4.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7369,7 +7370,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-4] .dashboard-section-menu-left>.dashboard-box-logo {
 	background-color: unset;
-	/* background-image: url(./../images/bg-menu/img-4.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-4.jpg);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7384,7 +7385,7 @@ select.dashboard-h40 {
 }
 
 [data-image-menu-background=image-menu-background-5] .dashboard-section-menu-left {
-	/* background-image: url(./../images/bg-menu/img-5.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-5.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -7392,7 +7393,7 @@ select.dashboard-h40 {
 
 [data-image-menu-background=image-menu-background-5] .dashboard-section-menu-left>.dashboard-box-logo {
 	background-color: unset;
-	/* background-image: url(./../images/bg-menu/img-5.dashboard-jpg); */
+	background-image: url(../public/images/bg-menu/img-5.jpg);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
