@@ -1,6 +1,7 @@
 import Footer1 from "@/components/footers/Footer1";
 
 import Header1 from "@/components/headers/Header1";
+import HeaderAdmin from "@/components/headers/HeaderAdmin";
 import Dashboard from "@/components/otherPages/Dashboard";
 import DashboardSidebar from "@/components/otherPages/DashboardSidebar";
 import React from "react";
@@ -12,13 +13,13 @@ export const metadata = {
 export default function AccountPage() {
   return (
     <>
-      <Header1 />
+      <HeaderAdmin />
       <main className="page-wrapper">
-        <div className="mb-4 pb-4"></div>
+        {/* <div className="mb-4 pb-4"></div> */}
         <section className="my-account container">
-          <h2 className="page-title">My Account</h2>
+          {/* <h2 className="page-title">My Account</h2> */}
           <div className="row">
-            <DashboardSidebar />
+            {/* <DashboardSidebar /> */}
             <Dashboard />
           </div>
         </section>

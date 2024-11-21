@@ -1,8 +1,12 @@
 "use client";
+import "@/public/assets/css/styles.css";
 import Svgs from "@/components/common/Svgs";
+import '../styles/globals.css';
 import "react-tooltip/dist/react-tooltip.css";
 import "../public/assets/css/plugins/swiper.min.css";
 import "../public/assets/sass/style.scss";
+// import "../public/assets/css/style.dashboard.css";
+
 import "rc-slider/assets/index.css";
 import "tippy.js/dist/tippy.css";
 import LoginFormPopup from "@/components/common/LoginFormPopup";
@@ -24,6 +28,7 @@ import ProductAdditionalInformation from "@/components/asides/ProductAdditionalI
 import ProductReviews from "@/components/asides/ProductReviews";
 import MobileFooter1 from "@/components/footers/MobileFooter1";
 import { SessionProvider } from "next-auth/react";
+
 
 export default function RootLayout({ children }) {
   useEffect(() => {

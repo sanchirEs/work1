@@ -1,0 +1,1592 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.eot?rd1719");
+  src: url("/fonts/icomoon.eot?rd1719#iefix") format("embedded-opentype"),
+    url("/fonts/icomoon.ttf?rd1719") format("truetype"),
+    url("/fonts/icomoon.woff?rd1719") format("woff"),
+    url("/fonts/icomoon.svg?rd1719#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard-icon-activity:before {
+  content: "\e900";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-airplay:before {
+  content: "\e901";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-alert-circle:before {
+  content: "\e902";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-alert-octagon:before {
+  content: "\e903";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-alert-triangle:before {
+  content: "\e904";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-align-center:before {
+  content: "\e905";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-align-justify:before {
+  content: "\e906";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-align-left:before {
+  content: "\e907";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-align-right:before {
+  content: "\e908";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-anchor:before {
+  content: "\e909";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-aperture:before {
+  content: "\e90a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-archive:before {
+  content: "\e90b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-down:before {
+  content: "\e90c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-down-circle:before {
+  content: "\e90d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-down-left:before {
+  content: "\e90e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-down-right:before {
+  content: "\e90f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-left:before {
+  content: "\e910";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-left-circle:before {
+  content: "\e911";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-right:before {
+  content: "\e912";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-right-circle:before {
+  content: "\e913";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-up:before {
+  content: "\e914";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-up-circle:before {
+  content: "\e915";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-up-left:before {
+  content: "\e916";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-arrow-up-right:before {
+  content: "\e917";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-at-sign:before {
+  content: "\e918";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-award:before {
+  content: "\e919";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bar-chart:before {
+  content: "\e91e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bar-chart-2:before {
+  content: "\e91f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-battery:before {
+  content: "\e921";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-battery-charging:before {
+  content: "\e922";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bell:before {
+  content: "\e923";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bell-off:before {
+  content: "\e924";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bluetooth:before {
+  content: "\e926";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bold:before {
+  content: "\e927";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-book:before {
+  content: "\e928";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-book-open:before {
+  content: "\e929";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-bookmark:before {
+  content: "\e92a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-box:before {
+  content: "\e92b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-briefcase:before {
+  content: "\e92c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-calendar:before {
+  content: "\e92d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-camera:before {
+  content: "\e92e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-camera-off:before {
+  content: "\e92f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cast:before {
+  content: "\e930";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-check:before {
+  content: "\e931";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-check-circle:before {
+  content: "\e932";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-check-square:before {
+  content: "\e933";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevron-down:before {
+  content: "\e934";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevron-left:before {
+  content: "\e935";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevron-right:before {
+  content: "\e936";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevron-up:before {
+  content: "\e937";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevrons-down:before {
+  content: "\e938";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevrons-left:before {
+  content: "\e939";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevrons-right:before {
+  content: "\e93a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chevrons-up:before {
+  content: "\e949";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-chrome:before {
+  content: "\e952";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-circle:before {
+  content: "\e954";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-clipboard:before {
+  content: "\e955";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-clock:before {
+  content: "\e956";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud:before {
+  content: "\e957";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud-drizzle:before {
+  content: "\e958";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud-lightning:before {
+  content: "\e959";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud-off:before {
+  content: "\e95a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud-rain:before {
+  content: "\e95b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cloud-snow:before {
+  content: "\e95c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-code:before {
+  content: "\e95d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-codepen:before {
+  content: "\e95e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-codesandbox:before {
+  content: "\e95f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-coffee:before {
+  content: "\e960";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-columns:before {
+  content: "\e961";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-command:before {
+  content: "\e962";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-compass:before {
+  content: "\e963";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-copy:before {
+  content: "\e964";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-down-left:before {
+  content: "\e965";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-down-right:before {
+  content: "\e966";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-left-down:before {
+  content: "\e967";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-left-up:before {
+  content: "\e968";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-right-down:before {
+  content: "\e969";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-right-up:before {
+  content: "\e96a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-up-left:before {
+  content: "\e96b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-corner-up-right:before {
+  content: "\e96c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-cpu:before {
+  content: "\e96d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-credit-card:before {
+  content: "\e96e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-crop:before {
+  content: "\e96f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-crosshair:before {
+  content: "\e970";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-database:before {
+  content: "\e971";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-delete:before {
+  content: "\e972";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-disc:before {
+  content: "\e973";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-dollar-sign:before {
+  content: "\e974";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-download:before {
+  content: "\e975";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-download-cloud:before {
+  content: "\e976";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-droplet:before {
+  content: "\e977";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-edit:before {
+  content: "\e978";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-edit-2:before {
+  content: "\e979";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-edit-3:before {
+  content: "\e97a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-external-link:before {
+  content: "\e97b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-eye:before {
+  content: "\e97c";
+  font-family: "icomoon";
+  font-style: normal;
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-eye-off:before {
+  content: "\e97d";
+  font-family: "icomoon";
+  font-style: normal;
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-facebook:before {
+  content: "\e97e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-fast-forward:before {
+  content: "\e97f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-feather:before {
+  content: "\e980";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-figma:before {
+  content: "\e981";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-file:before {
+  content: "\e982";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-file-minus:before {
+  content: "\e983";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-file-plus:before {
+  content: "\e984";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-file-text:before {
+  content: "\e985";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-film:before {
+  content: "\e986";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-filter:before {
+  content: "\e987";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-flag:before {
+  content: "\e988";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-folder:before {
+  content: "\e989";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-folder-minus:before {
+  content: "\e98a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-folder-plus:before {
+  content: "\e98b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-framer:before {
+  content: "\e98c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-frown:before {
+  content: "\e98d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-gift:before {
+  content: "\e98e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-git-branch:before {
+  content: "\e98f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-git-commit:before {
+  content: "\e990";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-git-merge:before {
+  content: "\e991";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-git-pull-request:before {
+  content: "\e992";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-github:before {
+  content: "\e993";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-gitlab:before {
+  content: "\e994";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-globe:before {
+  content: "\e995";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-grid:before {
+  content: "\e996";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-hard-drive:before {
+  content: "\e997";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-hash:before {
+  content: "\e998";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-headphones:before {
+  content: "\e999";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-heart:before {
+  content: "\e99a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-help-circle:before {
+  content: "\e99b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-hexagon:before {
+  content: "\e99c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-home:before {
+  content: "\e99d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-image:before {
+  content: "\e99e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-inbox:before {
+  content: "\e99f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-info:before {
+  content: "\e9a0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-instagram:before {
+  content: "\e9a1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-italic:before {
+  content: "\e9a2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-key:before {
+  content: "\e9a3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-layers:before {
+  content: "\e9a4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-layout:before {
+  content: "\e9a5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-life-buoy:before {
+  content: "\e9a6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-link:before {
+  content: "\e9a7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-link-2:before {
+  content: "\e9a8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-linkedin:before {
+  content: "\e9a9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-list:before {
+  content: "\e9aa";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-loader:before {
+  content: "\e9ab";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-lock:before {
+  content: "\e9ac";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-log-in:before {
+  content: "\e9ad";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-log-out:before {
+  content: "\e9ae";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-mail:before {
+  content: "\e9af";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-map:before {
+  content: "\e9b0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-map-pin:before {
+  content: "\e9b1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-maximize:before {
+  content: "\e9b2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-maximize-2:before {
+  content: "\e9b3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-meh:before {
+  content: "\e9b4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-menu:before {
+  content: "\e9b5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-message-circle:before {
+  content: "\e9b6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-message-square:before {
+  content: "\e9b7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-mic:before {
+  content: "\e9b8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-mic-off:before {
+  content: "\e9b9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-minimize:before {
+  content: "\e9ba";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-minimize-2:before {
+  content: "\e9bb";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-minus:before {
+  content: "\e9bc";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-minus-circle:before {
+  content: "\e9bd";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-minus-square:before {
+  content: "\e9be";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-monitor:before {
+  content: "\e9bf";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-moon:before {
+  content: "\e9c0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-more-horizontal:before {
+  content: "\e9c1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-more-vertical:before {
+  content: "\e9c2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-mouse-pointer:before {
+  content: "\e9c3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-move:before {
+  content: "\e9c4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-music:before {
+  content: "\e9c5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-navigation:before {
+  content: "\e9c6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-navigation-2:before {
+  content: "\e9c7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-octagon:before {
+  content: "\e9c8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-package:before {
+  content: "\e9c9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-paperclip:before {
+  content: "\e9ca";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-pause:before {
+  content: "\e9cb";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-pause-circle:before {
+  content: "\e9cc";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-pen-tool:before {
+  content: "\e9cd";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-percent:before {
+  content: "\e9ce";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone:before {
+  content: "\e9cf";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-call:before {
+  content: "\e9d0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-forwarded:before {
+  content: "\e9d1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-incoming:before {
+  content: "\e9d2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-missed:before {
+  content: "\e9d3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-off:before {
+  content: "\e9d4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-phone-outgoing:before {
+  content: "\e9d5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-pie-chart:before {
+  content: "\e9d6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-play:before {
+  content: "\e9d7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-play-circle:before {
+  content: "\e9d8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-plus:before {
+  content: "\e9d9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-plus-circle:before {
+  content: "\e9da";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-plus-square:before {
+  content: "\e9db";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-pocket:before {
+  content: "\e9dc";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-power:before {
+  content: "\e9dd";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-printer:before {
+  content: "\e9de";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-radio:before {
+  content: "\e9df";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-refresh-ccw:before {
+  content: "\e9e0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-refresh-cw:before {
+  content: "\e9e1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-repeat:before {
+  content: "\e9e2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-rewind:before {
+  content: "\e9e3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-rotate-ccw:before {
+  content: "\e9e4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-rotate-cw:before {
+  content: "\e9e5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-rss:before {
+  content: "\e9e6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-save:before {
+  content: "\e9e7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-scissors:before {
+  content: "\e9e8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-search:before {
+  content: "\e9e9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-send:before {
+  content: "\e9ea";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-server:before {
+  content: "\e9eb";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-settings:before {
+  content: "\e9ec";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-share:before {
+  content: "\e9ed";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-share-2:before {
+  content: "\e9ee";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-shield:before {
+  content: "\e9ef";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-shield-off:before {
+  content: "\e9f0";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-shopping-bag:before {
+  content: "\e9f1";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-shopping-cart:before {
+  content: "\e9f2";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-shuffle:before {
+  content: "\e9f3";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-sidebar:before {
+  content: "\e9f4";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-skip-back:before {
+  content: "\e9f5";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-skip-forward:before {
+  content: "\e9f6";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-slack:before {
+  content: "\e9f7";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-slash:before {
+  content: "\e9f8";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-sliders:before {
+  content: "\e9f9";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-smartphone:before {
+  content: "\e9fa";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-smile:before {
+  content: "\e9fb";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-speaker:before {
+  content: "\e9fc";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-square:before {
+  content: "\e9fd";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-star:before {
+  content: "\e9fe";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-stop-circle:before {
+  content: "\e9ff";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-sun:before {
+  content: "\ea00";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-sunrise:before {
+  content: "\ea01";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-sunset:before {
+  content: "\ea02";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-tablet:before {
+  content: "\ea03";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-tag:before {
+  content: "\ea04";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-target:before {
+  content: "\ea05";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-terminal:before {
+  content: "\ea06";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-thermometer:before {
+  content: "\ea07";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-thumbs-down:before {
+  content: "\ea08";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-thumbs-up:before {
+  content: "\ea09";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-toggle-left:before {
+  content: "\ea0a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-toggle-right:before {
+  content: "\ea0b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-tool:before {
+  content: "\ea0c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-trash:before {
+  content: "\ea0d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-trash-2:before {
+  content: "\ea0e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-trello:before {
+  content: "\ea0f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-trending-down:before {
+  content: "\ea10";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-trending-up:before {
+  content: "\ea11";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-triangle:before {
+  content: "\ea12";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-truck:before {
+  content: "\ea13";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-tv:before {
+  content: "\ea14";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-twitch:before {
+  content: "\ea15";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-twitter:before {
+  content: "\ea16";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-type:before {
+  content: "\ea17";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-umbrella:before {
+  content: "\ea18";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-underline:before {
+  content: "\ea19";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-unlock:before {
+  content: "\ea1a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-upload:before {
+  content: "\ea1b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-upload-cloud:before {
+  content: "\ea1c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-user:before {
+  content: "\ea1d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-user-check:before {
+  content: "\ea1e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-user-minus:before {
+  content: "\ea1f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-user-plus:before {
+  content: "\ea20";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-user-x:before {
+  content: "\ea21";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-users:before {
+  content: "\ea22";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-video:before {
+  content: "\ea23";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-video-off:before {
+  content: "\ea24";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-voicemail:before {
+  content: "\ea25";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-volume:before {
+  content: "\ea26";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-volume-1:before {
+  content: "\ea27";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-volume-2:before {
+  content: "\ea28";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-volume-x:before {
+  content: "\ea29";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-watch:before {
+  content: "\ea2a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-wifi:before {
+  content: "\ea2b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-wifi-off:before {
+  content: "\ea2c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-wind:before {
+  content: "\ea2d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-x:before {
+  content: "\ea2e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-x-circle:before {
+  content: "\ea2f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-x-octagon:before {
+  content: "\ea30";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-x-square:before {
+  content: "\ea31";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-youtube:before {
+  content: "\ea32";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-zap:before {
+  content: "\ea33";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-zap-off:before {
+  content: "\ea34";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-zoom-in:before {
+  content: "\ea35";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-zoom-out:before {
+  content: "\ea36";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-noti-4:before {
+  content: "\e91a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-noti-3:before {
+  content: "\e91b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-noti-2:before {
+  content: "\e91c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-noti-1:before {
+  content: "\e91d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-menu-left:before {
+  content: "\e920";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-25:before {
+  content: "\e93b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-24:before {
+  content: "\e93c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-23:before {
+  content: "\e93d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-22:before {
+  content: "\e93e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-21:before {
+  content: "\e93f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-20:before {
+  content: "\e940";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-19:before {
+  content: "\e941";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-18:before {
+  content: "\e942";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-17:before {
+  content: "\e943";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-16:before {
+  content: "\e944";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-14:before {
+  content: "\e945";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-13:before {
+  content: "\e946";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-12:before {
+  content: "\e947";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-11:before {
+  content: "\e948";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-10:before {
+  content: "\ea37";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-9:before {
+  content: "\e94a";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-8:before {
+  content: "\e94b";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-7:before {
+  content: "\e94c";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-6:before {
+  content: "\e94d";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-5:before {
+  content: "\e94e";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-4:before {
+  content: "\e94f";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-3:before {
+  content: "\e950";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-2:before {
+  content: "\e951";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-1:before {
+  content: "\e953";
+  font-family: "icomoon";
+  font-style: normal;
+}
+.dashboard-icon-star1:before {
+  content: "\e925";
+  font-family: "icomoon";
+  font-style: normal;
+}
