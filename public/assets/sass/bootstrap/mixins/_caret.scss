@@ -32,12 +32,13 @@
       margin-left: $caret-spacing;
       vertical-align: $caret-vertical-align;
       content: "";
+
       @if $direction == down {
-        @include caret-down();
+        @include caret-down;
       } @else if $direction == up {
-        @include caret-up();
+        @include caret-up;
       } @else if $direction == end {
-        @include caret-end();
+        @include caret-end;
       }
     }
 
@@ -51,7 +52,8 @@
         margin-right: $caret-spacing;
         vertical-align: $caret-vertical-align;
         content: "";
-        @include caret-start();
+
+        @include caret-start;
       }
     }
 

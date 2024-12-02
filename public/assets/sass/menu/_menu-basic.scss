@@ -31,7 +31,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  &:after {
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -40,11 +40,11 @@
     width: 0;
     height: 2px;
     transition: $nav-link-underline-transition-s;
-    background-color: currentColor;
+    background-color: currentcolor;
   }
 
   &:hover {
-    &:after {
+    &::after {
       width: $nav-link-active-bottom-width;
     }
   }
@@ -58,7 +58,7 @@
     padding-right: $navigation-item-padding-x;
     padding-left: $navigation-item-padding-x;
 
-    &:after {
+    &::after {
       left: $navigation-item-padding-x;
     }
   }
@@ -82,7 +82,7 @@
 
 // Menu link underlined small
 .menu-link_us-s {
-  &:after {
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -91,12 +91,12 @@
     width: 0;
     height: 2px;
     transition: $nav-link-underline-transition-s;
-    background-color: currentColor;
+    background-color: currentcolor;
   }
 
   &:hover,
   &.menu-link_active {
-    &:after {
+    &::after {
       width: $nav-link-active-bottom-width;
     }
   }

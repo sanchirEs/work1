@@ -19,7 +19,7 @@
     .navigation__link {
       padding: $navigation-item-padding-y $navigation-item-padding-x * 0.5;
 
-      &:after {
+      &::after {
         left: $navigation-item-padding-x * 0.5;
       }
     }

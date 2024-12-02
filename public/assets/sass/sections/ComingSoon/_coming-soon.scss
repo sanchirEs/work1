@@ -1,5 +1,5 @@
 body.coming-soon-page {
-  background: url(/assets/images/pattern_bg.png) center no-repeat;
+  background: url("/assets/images/pattern_bg.png") center no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
@@ -10,10 +10,7 @@ body.coming-soon-page {
 
 .coming-soon {
   // position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +23,7 @@ body.coming-soon-page {
 
     h2 {
       @include font-size(6.25rem);
+
       font-weight: $font-weight-bold;
       letter-spacing: -0.05em;
     }
@@ -59,7 +57,7 @@ body.coming-soon-page {
       position: relative;
       min-width: 3.625rem;
 
-      &:before {
+      &::before {
         content: ":";
         display: block;
         position: absolute;
@@ -71,7 +69,7 @@ body.coming-soon-page {
         }
       }
 
-      &:first-child:before {
+      &:first-child::before {
         display: none;
       }
     }

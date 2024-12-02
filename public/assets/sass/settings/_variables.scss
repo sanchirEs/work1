@@ -1,12 +1,16 @@
-/*-----------------------------------------------*/
-/*------------------ Base Colors ----------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ------------------ Base Colors ---------------- */
+
+/* ----------------------------------------------- */
+@use "sass:math";
+
 $color-steelblue: #4780aa;
 $color-cyan: #cde9f6;
-$color-gray-900: #222222;
+$color-gray-900: #222;
 $color-gray-500: #767676;
 $color-gray-300: #e4e4e4;
-$color-gray-200: #eeeeee;
+$color-gray-200: #eee;
 $color-gray-100: #faf9f8;
 $color-darkgreen: #5b7052;
 $color-green: #def2d7;
@@ -14,14 +18,13 @@ $color-red-900: #ab3331;
 $color-red-800: #c32929;
 $color-red-700: #d6001c;
 $color-red-200: #ecc8c5;
-$color-white: #ffffff;
+$color-white: #fff;
 $color-yellow: #f7f3d7;
 $color-olive: #927238;
 $color-brick: #704634;
 $color-beige: #b9a16b;
 $color-dark-purple: #2f2d51;
 $color-dust: #ddc2bd;
-
 $primary: $color-gray-900;
 $secondary: $color-gray-500;
 $third: $color-beige;
@@ -36,11 +39,9 @@ $danger-text: $color-red-900;
 $light: $color-gray-300;
 $lighter: $color-gray-100;
 $dark: $color-gray-900;
-
 $heading-color: $primary;
 $body-color: $primary;
 $body-color-secondary: $secondary;
-
 $body-bg: $color-white;
 $color-component-active: $color-white;
 
@@ -59,9 +60,11 @@ $theme-colors: (
   "beige": $color-beige,
 );
 
-/*-----------------------------------------------*/
-/*------------------ Typography -----------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ------------------ Typography ----------------- */
+
+/* ----------------------------------------------- */
 
 $font-size-base: 0.875rem;
 $h1-font-size: $font-size-base * 5;
@@ -71,32 +74,30 @@ $h4-font-size: 1.25rem;
 $h5-font-size: 1.125rem;
 $h6-font-size: 1rem;
 $strock-font-size: 5.625rem;
-
 $font-weight-base: 400;
 $font-weight-heading: 500;
-
 $line-height-base: 1.7143;
 
-/*------------------ Page Title -----------------*/
+/* ------------------ Page Title ----------------- */
 $page-title-size: 3.125rem;
 $page-title-weight: 700;
 
-/*---------------- Section Title ----------------*/
+/* ---------------- Section Title ---------------- */
 $section-title-size: $font-size-base * 2.5;
 $section-title-mobile-size: $h3-font-size;
 
-/*----------------- Block Title -----------------*/
+/* ----------------- Block Title ----------------- */
 $block-title-size: $h6-font-size;
 
-/*------------------ Tab Title ------------------*/
+/* ------------------ Tab Title ------------------ */
 $content-title-font-size: 1rem;
 $content-title-line-height: 1.375;
 
-/*----------------- Text content ----------------*/
+/* ----------------- Text content ---------------- */
 $content-size: $font-size-base;
 $content-line-height: $line-height-base;
 
-/*----------------- Blockquote ------------------*/
+/* ----------------- Blockquote ------------------ */
 $blockquote-background: $lighter;
 $blockquote-font-size: $content-title-font-size;
 $blockquote-font-style: italic;
@@ -104,33 +105,36 @@ $blockquote-font-weight: $font-weight-heading;
 $blockquote-line-height: $content-title-line-height;
 $blockquote-footer-font-size: $font-size-base;
 
-/*------------------ List style -----------------*/
+/* ------------------ List style ----------------- */
 $list-item-title-size: $font-size-base;
 $list-item-size: $font-size-base;
 $list-item-line-height: 3.143;
 $color-dot-list-marker: $body-color-secondary;
-
 $checkbox-mark-size: 1.125rem;
 
-/*-----------------------------------------------*/
-/*-------------------- Layout -------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* -------------------- Layout ------------------- */
+
+/* ----------------------------------------------- */
 $grid-gutter-width: 1.875rem;
 $block-space: 2.125rem;
-$container-padding-x: $grid-gutter-width / 2;
+$container-padding-x: math.div($grid-gutter-width, 2);
 $grid-tablet-gutter-width: 1.5rem;
 $grid-mobile-gutter-width: 0.875rem;
 $full-section-padding-x: 3.75rem;
 
-/*-----------------------------------------------*/
-/*------------------ Compontents ----------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ------------------ Compontents ---------------- */
+
+/* ----------------------------------------------- */
 $border-color: $color-gray-300;
 $border-radius: 0;
 $box-shadow: 0 0.625rem 1.5625rem 0 rgba($primary, 0.05);
 $popover-box-shadow: 0 0 1.5625rem 0 rgba($primary, 0.05);
 
-/*-------------------- Table --------------------*/
+/* -------------------- Table -------------------- */
 // Table header
 $table-th-padding-x: 1.5rem;
 $table-th-padding-top: 1.625rem;
@@ -145,14 +149,11 @@ $table-cell-padding-x: 1.5rem;
 $table-cell-padding-y: 1.53125rem;
 $table-border-width: 0;
 $table-border-color: transparent;
-
 $table-color: $body-color;
 $table-bg: transparent;
-
 $table-striped-color: $table-color;
 $table-striped-order: even;
 $table-striped-bg: $lighter;
-
 $table-variants: (
   "primary": $color-white,
   "secondary": shift-color($secondary, $table-bg-scale),
@@ -164,7 +165,7 @@ $table-variants: (
   "dark": $dark,
 );
 
-/*-------------------- Alert --------------------*/
+/* -------------------- Alert -------------------- */
 $alert-colors: (
   "success": (
     "bg": $success,
@@ -183,25 +184,22 @@ $alert-colors: (
     "color": $danger-text,
   ),
 );
-
 $alert-border-radius: 0;
 $alert-padding-x: 1.875rem;
 $alert-padding-top: 1.6875rem;
 $alert-padding-bottom: 1.375rem;
 $alert-font-weight: 500;
 
-/*-------------------- Buttons --------------------*/
+/* -------------------- Buttons -------------------- */
 // Close
 $btn-close-opacity: 1;
 $btn-close-width: 1.375rem;
 $btn-close-height: 1.375rem;
 $btn-close-bg: url("data:image/svg+xml,<svg width='23' height='22' viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.48881 15.5962L16.0954 4.98963L17.5096 6.40384L6.90302 17.0104L5.48881 15.5962Z' fill='#{$btn-close-color}'/><path d='M16.0954 17.7176L4.7817 6.40384L6.19592 4.98963L17.5096 16.3033L16.0954 17.7176Z' fill='#{$btn-close-color}'/></svg>");
-
 $btn-close-lg-width: 1rem;
 $btn-close-lg-height: 1rem;
 $btn-close-lg-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.414336 14.1421L14.5565 0L15.9707 1.41421L1.82855 15.5563L0.414336 14.1421Z' fill='#{$btn-close-color}'/><path d='M1.41421 0.142113L15.5563 14.2842L14.1421 15.6985L0 1.55633L1.41421 0.142113Z' fill='#{$btn-close-color}'/></svg>");
 $btn-close-lg-white-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.414336 14.1421L14.5565 0L15.9707 1.41421L1.82855 15.5563L0.414336 14.1421Z' fill='#fff'/><path d='M1.41421 0.142113L15.5563 14.2842L14.1421 15.6985L0 1.55633L1.41421 0.142113Z' fill='#fff'/></svg>");
-
 $btn-close-xs-width: 0.625rem;
 $btn-close-xs-height: 0.625rem;
 $btn-close-xs-bg: url("data:image/svg+xml,<svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z' fill='#{$body-color-secondary}'/><path d='M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z' fill='#{$body-color-secondary}'/></svg>");
@@ -213,31 +211,23 @@ $btn-font-size: 1rem;
 $btn-padding-x: 3.125rem;
 $btn-padding-top: 0.9375rem;
 $btn-padding-bottom: 0.75rem;
-
 $btn-padding-y-sm: 0.375rem;
 $btn-padding-x-sm: 1.25rem;
 $btn-border-radius-sm: $btn-border-radius;
-
 $btn-font-size-lg: $font-size-base;
 $btn-line-height-lg: 1.5rem;
 $btn-padding-y-lg: 0.5rem;
 $btn-padding-x-lg: 1.25rem;
 $btn-border-radius-lg: $btn-border-radius;
-
 $btn-focus-box-shadow: none;
 $btn-active-box-shadow: none;
 $btn-focus-width: 0;
-
 $link-decoration: none;
-
 $btn-round-width: 2.5rem;
 $btn-round-height: 2.5rem;
-
 $btn-round-sm-width: 2.1875rem;
 $btn-round-sm-height: 2.1875rem;
-
 $btn-transition: all 0.15s ease-in-out;
-
 $button-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -248,13 +238,11 @@ $button-colors: (
   "dark": $dark,
   "red": $color-red-800,
 );
-
 $btn-beige: (
   "border": $color-beige,
   "color": $color-white,
   "active": $color-white,
 );
-
 $btn-light: (
   "border": $light,
   "color": $primary,
@@ -273,11 +261,11 @@ $swiper-pagination-active-color: $primary;
 // Scroll To Top
 $scroll-top-bg: $color-gray-200;
 
-/*---------------------- List ---------------------*/
+/* ---------------------- List --------------------- */
 $list-margin-y: 0.375rem;
 $list-item-padding-y: 0.5rem;
 
-/*---------------------- Form ---------------------*/
+/* ---------------------- Form --------------------- */
 // Input
 $input-padding-y-sm: 0.75rem;
 $input-padding-x-sm: 1.125rem;
@@ -289,13 +277,11 @@ $input-font-size: $font-size-base;
 $input-line-height: $line-height-base;
 $input-color: $body-color;
 $input-placeholder-color: $gray-600;
-
 $input-border-width: 0.125rem;
 $input-border-color: $border-color;
 $input-border-radius: 0;
 $input-border-radius-sm: 0;
 $input-border-radius-lg: 0;
-
 $input-box-shadow: none;
 $input-focus-box-shadow: none;
 $box-shadow-inset: none;
@@ -317,7 +303,6 @@ $search-field-arrow-width: 0.625rem;
 $hover-content-appear-animation: all 0.2s ease;
 $search-field-padding-y: 1rem;
 $search-field-padding-x: 1.25rem;
-
 $search-suggestion-margin-y: $list-margin-y;
 $search-suggestion-item-padding-y: $list-item-padding-y;
 
@@ -359,7 +344,7 @@ $form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/200
 $tooltip-opacity: 1;
 $tooltip-font-size: 0.8125rem;
 
-/*------------------ Accordions -----------------*/
+/* ------------------ Accordions ----------------- */
 $accordion-padding-x: 1.875rem;
 $accordion-body-padding-top: 1.5rem;
 $accordion-body-padding-bottom: 1.75rem;
@@ -372,26 +357,22 @@ $accordion-icon-width: 0.875rem;
 $accordion-icon-height: 0.875rem;
 $accordion-border-color: $color-gray-200;
 $accordion-box-shadow: $popover-box-shadow;
-
 $accordion-button-active-bg: $color-white;
 $accordion-button-active-color: $heading-color;
 $accordion-icon-color: $heading-color;
 $accordion-icon-active-color: $heading-color;
-
 $accordion-icon-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
-/*--------------------- Tabs --------------------*/
+/* --------------------- Tabs -------------------- */
 $nav-link-font-size: $content-title-font-size;
 $nav-link-font-weight: 500;
 $nav-link-line-height: $content-title-line-height;
 $nav-link-padding-x: 1.75rem;
 $nav-link-padding-top: 0.6875rem;
 $nav-link-padding-bottom: 0.4375rem;
-
 $nav-pills-border-radius: 0;
 $nav-pills-link-active-bg: $body-color;
 $nav-pills-link-active-color: $color-component-active;
-
 $nav-link-underline-transition-s: width 0.28s
   cubic-bezier(0.47, 0, 0.745, 0.715);
 $nav-link-underline-transition-l: width 0.36s
@@ -403,7 +384,7 @@ $nav-tabs-link-color: $body-color-secondary;
 $nav-tabs-link-active-color: $body-color;
 $nav-tabs-link-active-border: $body-color;
 
-/*----------------- Range Slider ----------------*/
+/* ----------------- Range Slider ---------------- */
 $slider-primary: $primary;
 $slider-track-bg: $light;
 $slider-border-radius: 10px;
@@ -411,16 +392,18 @@ $slider-horizontal-width: 100%;
 $slider-line-height: 18px;
 $slider-bar-height: 6px;
 
-/*----------------- Progressbar -----------------*/
+/* ----------------- Progressbar ----------------- */
 $progress-text-color: $body-color;
 $progress-font-size: $font-size-base;
 $progress-bar-background: $light;
 $progress-bar-height: 0.625rem;
 $progress-bar-radius: 0.625rem;
 
-/*-----------------------------------------------*/
-/*-------------------- Header -------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* -------------------- Header ------------------- */
+
+/* ----------------------------------------------- */
 // Mobile header
 $mobile-header-height: 3.75rem;
 $mobile-header-background: $body-bg;
@@ -429,7 +412,6 @@ $mobile-header-z-index: $zindex-fixed;
 // Full width header
 $header-fullwidth-padding-xxl: 0 3.75rem;
 $header-fullwidth-padding: 0 1.75rem;
-
 $header-top-margin-xxl: 0 -3.75rem;
 $header-top-margin: 0 -1.75rem;
 
@@ -438,10 +420,8 @@ $navigation-item-padding-x: 1rem;
 $navigation-item-padding-x-sm: $navigation-item-padding-x * 0.7;
 $navigation-item-padding-y: 2px;
 $navigation-item-line-height: 1.5rem;
-
 $nav-link-color: $heading-color;
 $nav-link-active-bottom-width: 2em;
-
 $header-tools-item-padding-y: 0.25rem;
 $header-tools-item-padding-x: 0.5rem;
 $header-tools-item-space: 1rem;
@@ -470,7 +450,6 @@ $search-popup-padding-bottom: 3.5rem;
 $search-result-min-height: 23.75rem;
 $search-result-img-height: 18.75rem;
 $search-result-bottom-space: 2rem;
-
 $header-background: $body-bg;
 
 // Header Type 1
@@ -510,7 +489,7 @@ $header-type-7-logo-space: 2.75rem;
 $header-type-7-search-box-width: 26.625rem;
 
 // Sticky Header
-$header-sticky-box-shadow: 0 8px 25px 0 rgba(140, 152, 164, 0.15);
+$header-sticky-box-shadow: 0 8px 25px 0 rgb(140 152 164 / 15%);
 
 // Categories Navigation
 $categories-nav-height: 2em;
@@ -521,9 +500,11 @@ $categories-nav-border: 1px solid $border-color;
 $categories-nav-border-radius: 0 0 4px 4px;
 $categories-nav-width: 20.5rem;
 
-/*-----------------------------------------------*/
-/*--------------------- Menu --------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* --------------------- Menu -------------------- */
+
+/* ----------------------------------------------- */
 // Menu configuration
 $menu-bg: $color-white;
 $menu-box-shadow: $box-shadow;
@@ -547,25 +528,23 @@ $default-menu-width: 16.25rem;
 $default-menu-padding-x: 1.875rem;
 $default-menu-padding: 1.5rem $default-menu-padding-x 1rem;
 
-/*-----------------------------------------------*/
-/*-------------------- Footer -------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* -------------------- Footer ------------------- */
+
+/* ----------------------------------------------- */
 $footer-color: $body-color;
 $footer-middle-padding-top: 6.25rem;
 $footer-middle-padding-bottom: 4.75rem;
-
 $footer-menu-title-color: inherit;
 $footer-menu-link-color: inherit;
-
 $footer-social-link-padding-x: 1rem;
 $footer-social-link-color: inherit;
 $footer-social-link-active-color: $body-color-secondary;
-
 $svg-arrow-up-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='#{$footer-color}'/></svg>");
 $svg-arrow-up-white-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='white'/></svg>");
 $svg-arrow-down-bg: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_34_1038)"><path d="M5.57201 9.11914C5.8052 9.35233 6.1948 9.35233 6.42858 9.11914L11.8229 3.73866C12.059 3.50248 12.059 3.11947 11.8229 2.88389C11.5867 2.64771 11.2031 2.64771 10.9669 2.88389L6.00002 7.83695L1.03375 2.88329C0.796978 2.64711 0.413959 2.64711 0.177183 2.88329C-0.0589957 3.11947 -0.0589957 3.50248 0.177183 3.73806L5.57201 9.11914Z" fill="#{$body-color}"/></g><defs><clipPath id="clip0_34_1038"><rect width="12" height="12" fill="white" transform="translate(12 12) rotate(-180)"/></clipPath></defs></svg>');
 $svg-arrow-down-white-bg: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_34_1038)"><path d="M5.57201 9.11914C5.8052 9.35233 6.1948 9.35233 6.42858 9.11914L11.8229 3.73866C12.059 3.50248 12.059 3.11947 11.8229 2.88389C11.5867 2.64771 11.2031 2.64771 10.9669 2.88389L6.00002 7.83695L1.03375 2.88329C0.796978 2.64711 0.413959 2.64711 0.177183 2.88329C-0.0589957 3.11947 -0.0589957 3.50248 0.177183 3.73806L5.57201 9.11914Z" fill="white"/></g><defs><clipPath id="clip0_34_1038"><rect width="12" height="12" fill="white" transform="translate(12 12) rotate(-180)"/></clipPath></defs></svg>');
-
 $footer-type-1-bg: $light;
 $footer-type-1-color: $footer-color;
 
@@ -601,16 +580,20 @@ $newsletter-dark-form-button-border: #5c5c5c;
 $newsletter-dark-form-button-bg: #5c5c5c;
 $newsletter-dark-form-button-color: $color-white;
 
-/*-----------------------------------------------*/
-/*----------------- Aside Popup -----------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ----------------- Aside Popup ----------------- */
+
+/* ----------------------------------------------- */
 $aside-width: 26.25rem;
 $aside-padding-x: 2.5rem;
 $aside-header-bg: $lighter;
 
-/*-----------------------------------------------*/
-/*-------------------- Modal --------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* -------------------- Modal -------------------- */
+
+/* ----------------------------------------------- */
 $modal-inner-padding: 1.875rem $aside-padding-x;
 $modal-header-padding-y: 1.5rem;
 $modal-header-padding-x: $aside-padding-x;
@@ -618,32 +601,39 @@ $modal-header-padding: $modal-header-padding-y $modal-header-padding-x; // Keep 
 $modal-header-bg: $lighter;
 $modal-header-border: 0;
 
-/*-----------------------------------------------*/
-/*----------------- Text content ----------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ----------------- Text content ---------------- */
+
+/* ----------------------------------------------- */
 // Text content positions
 $content-space: 1.875rem;
 $content-space-md: 2.5rem;
 $content-space-xl: 3.125rem;
 
-/*-----------------------------------------------*/
-/*------------------- Swatches ------------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ------------------- Swatches ------------------ */
+
+/* ----------------------------------------------- */
 $swatch-color-width: 1.75rem;
 $swatch-color-height: $swatch-color-width;
-
 $card-swatch-color-width: 1.25rem;
 $card-swatch-color-height: $card-swatch-color-width;
 
-/*-----------------------------------------------*/
-/*------------------- Rating Stars --------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
+
+/* ------------------- Rating Stars -------------- */
+
+/* ----------------------------------------------- */
 $rating-star-color: #ccc;
 $rating-star_selected-color: #eeba36;
 $rating-star_overed-color: #ffe296;
 
-/*-----------------------------------------------*/
-/*------------------ Shop Checkout --------------*/
-/*-----------------------------------------------*/
+/* ----------------------------------------------- */
 
-$swiper-scrollbar-drag: rgba(0, 0, 0, 0.5);
+/* ------------------ Shop Checkout -------------- */
+
+/* ----------------------------------------------- */
+
+$swiper-scrollbar-drag: rgb(0 0 0 / 50%);

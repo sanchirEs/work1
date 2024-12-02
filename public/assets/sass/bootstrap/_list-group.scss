@@ -9,6 +9,7 @@
   // No need to set list-style: none; since .list-group-item is block level
   padding-left: 0; // reset padding because ul and ol
   margin-bottom: 0;
+
   @include border-radius($list-group-border-radius);
 }
 
@@ -154,10 +155,12 @@
 @each $state, $value in $theme-colors {
   $background: shift-color($value, $list-group-item-bg-scale);
   $color: shift-color($value, $list-group-item-color-scale);
-  @if (contrast-ratio($background, $color) < $min-contrast-ratio) {
+
+  @if contrast-ratio($background, $color) < $min-contrast-ratio {
     $color: mix($value, color-contrast($background), abs($alert-color-scale));
   }
 
   @include list-group-item-variant($state, $background, $color);
 }
+
 // scss-docs-end list-group-modifiers

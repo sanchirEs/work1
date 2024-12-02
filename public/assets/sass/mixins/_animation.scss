@@ -41,18 +41,22 @@
 /// @content [Animation css]
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
+  @keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes #{$animation-name} {
+
+  @keyframes #{$animation-name} {
     @content;
   }
-  @-ms-keyframes #{$animation-name} {
+
+  @keyframes #{$animation-name} {
     @content;
   }
-  @-o-keyframes #{$animation-name} {
+
+  @keyframes #{$animation-name} {
     @content;
   }
+
   @keyframes #{$animation-name} {
     @content;
   }

@@ -1,6 +1,6 @@
 // app/api/products/route.js
-import { NextResponse } from 'next/server';
-import prisma from '../../../prisma/client';
+import { NextResponse } from "next/server";
+import prisma from "../../../prisma/client";
 
 export async function GET(request) {
   try {
@@ -46,34 +46,34 @@ export async function GET(request) {
   }
 }
 
-export async function POST(request) {
+export async function POST(req) {
   try {
-    const data = await request.json();
+    const { name, description, price, minBatchQty, images } = await req.json();
 
-    const { name, description, price, minBatchQty } = data;
-
-    // Validate required fields
-    if (!name || !description || !price || !minBatchQty) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
+    // Validate the incoming data
+    if (!name || !description || !price || !images || images.length === 0) {
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
         { status: 400 }
       );
     }
 
+    // Save product to the database
     const product = await prisma.product.create({
       data: {
         name,
         description,
         price: parseFloat(price),
         minBatchQty: parseInt(minBatchQty, 10),
+        images, // Assuming this is a string array field in your database
       },
     });
 
-    return NextResponse.json({ product }, { status: 201 });
+    return new Response(JSON.stringify(product), { status: 201 });
   } catch (error) {
-    console.error('Error creating product:', error);
-    return NextResponse.json(
-      { error: 'Error creating product' },
+    console.error("Add product error:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to add product" }),
       { status: 500 }
     );
   }

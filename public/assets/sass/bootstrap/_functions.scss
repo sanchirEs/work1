@@ -1,12 +1,13 @@
 // Bootstrap functions
 //
 // Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
-
+@use "sass:color"; // Import the color module
 // Ascending
 // Used to evaluate Sass maps like our grid breakpoints.
 @mixin _assert-ascending($map, $map-name) {
   $prev-key: null;
   $prev-num: null;
+
   @each $key, $num in $map {
     @if $prev-num == null or unit($num) == "%" or unit($prev-num) == "%" {
       // Do nothing
@@ -15,6 +16,7 @@
     } @else if $prev-num >= $num {
       @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
     }
+
     $prev-key: $key;
     $prev-num: $num;
   }
@@ -26,6 +28,7 @@
   @if length($map) > 0 {
     $values: map-values($map);
     $first-value: nth($values, 1);
+
     @if $first-value != 0 {
       @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
     }
@@ -36,22 +39,26 @@
 // It prefixes the keys with `n` and makes the value negative.
 @function negativify-map($map) {
   $result: ();
+
   @each $key, $value in $map {
     @if $key != 0 {
       $result: map-merge($result, ("n" + $key: (-$value)));
     }
   }
+
   @return $result;
 }
 
 // Get multiple keys from a sass map
 @function map-get-multiple($map, $values) {
   $result: ();
+
   @each $key, $value in $map {
-    @if (index($values, $key) != null) {
+    @if index($values, $key) != null {
       $result: map-merge($result, ($key: $value));
     }
   }
+
   @return $result;
 }
 
@@ -106,6 +113,7 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
 
   @each $color in $foregrounds {
     $contrast-ratio: contrast-ratio($background, $color);
+
     @if $contrast-ratio > $min-contrast-ratio {
       @return $color;
     } @else if $contrast-ratio > $max-ratio {
@@ -115,7 +123,6 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
   }
 
   @warn "Found no color leading to #{$min-contrast-ratio}:1 contrast ratio against #{$background}...";
-
   @return $max-ratio-color;
 }
 
@@ -147,24 +154,24 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
 // Return opaque color
 // opaque(#fff, rgba(0, 0, 0, .5)) => #808080
 @function opaque($background, $foreground) {
-  @return mix(rgba($foreground, 1), $background, opacity($foreground) * 100);
+  @return color.mix(rgba($foreground, 1), $background, opacity($foreground) * 100%);
 }
 
-// scss-docs-start color-functions
 // Tint a color: mix a color with white
 @function tint-color($color, $weight) {
-  @return mix(white, $color, $weight);
+  @return color.mix(white, $color, $weight);
 }
 
 // Shade a color: mix a color with black
 @function shade-color($color, $weight) {
-  @return mix(black, $color, $weight);
+  @return color.mix(black, $color, $weight);
 }
 
 // Shade the color if the weight is positive, else tint it
 @function shift-color($color, $weight) {
   @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
 }
+
 // scss-docs-end color-functions
 
 // Return valid calc

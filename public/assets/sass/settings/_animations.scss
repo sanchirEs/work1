@@ -3,11 +3,10 @@ $move-distance: 0.625rem;
 @keyframes moveDown {
   0% {
     transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
-    -webkit-transform: translateY(0);
   }
 }
 
@@ -96,6 +95,7 @@ $move-distance: 0.625rem;
     visibility: visible;
   }
 }
+
 .anim_appear-center {
   top: 50%;
   transform: translateY(-50%);

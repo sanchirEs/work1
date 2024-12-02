@@ -20,7 +20,7 @@
   .day,
   .hour,
   .min {
-    &:after {
+    &::after {
       content: ':';
       display: block;
       position: absolute;
@@ -76,7 +76,7 @@
   .day,
   .hour,
   .min {
-    &:after {
+    &::after {
       content: ':';
       display: block;
       position: absolute;

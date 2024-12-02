@@ -8,12 +8,12 @@
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
   font-weight: $alert-font-weight;
+
   @include border-radius($alert-border-radius);
 }
 
 // Headings for larger alerts
 .alert-heading {
-  // Specified to prevent conflicts of changing $headings-color
   color: inherit;
 }
 
@@ -48,6 +48,7 @@
   $background: map-get($value, "bg");
   $border: map-get($value, "bg");
   $color: map-get($value, "color");
+
   // @if (contrast-ratio($background, $color) < $min-contrast-ratio) {
   //   $color: mix($value, color-contrast($background), abs($alert-color-scale));
   // }
@@ -60,4 +61,5 @@
     }
   }
 }
+
 // scss-docs-end alert-modifiers

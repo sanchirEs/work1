@@ -115,6 +115,7 @@
 .table-striped {
   > tbody > tr:nth-of-type(#{$table-striped-order}) {
     --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-striped-bg);
+
     color: var(--#{$variable-prefix}table-striped-color);
   }
 }
@@ -125,6 +126,7 @@
 
 .table-active {
   --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-active-bg);
+
   color: var(--#{$variable-prefix}table-active-color);
 }
 
@@ -135,6 +137,7 @@
 .table-hover {
   > tbody > tr:hover {
     --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-hover-bg);
+
     color: var(--#{$variable-prefix}table-hover-color);
   }
 }

@@ -10,7 +10,9 @@
   border: 0; // for button elements
   box-sizing: content-box;
   color: $btn-close-color;
-  @include border-radius();
+
+  @include border-radius;
+
   opacity: $btn-close-opacity;
 
   // Override <a>'s hover style

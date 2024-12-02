@@ -16,17 +16,18 @@ export default function AccountPage() {
     <>
       <HeaderAdmin />
       <main className="page-wrapper">
-        {/* <div className="mb-4 pb-4"></div> */}
-        <section className="my-account container">
+        <div className="mb-4 pb-4"></div>
+        <section className="my-account container"><ProductList />
           {/* <h2 className="page-title">My Account</h2> */}
           <div className="row">
             {/* <DashboardSidebar /> */}
             {/* <Dashboard /> */}
-            <ProductList />
+            
           </div>
         </section>
+        
       </main>
-
+      
       <div className="mb-5 pb-xl-5"></div>
       <Footer1 />
     </>

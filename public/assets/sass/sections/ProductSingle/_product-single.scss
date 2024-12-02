@@ -37,7 +37,7 @@
           background-color: #e4e4e4;
         }
 
-        &:after {
+        &::after {
           display: none;
         }
 
@@ -133,10 +133,7 @@
               }
 
               &.product-degree {
-                left: 1.875rem;
-                top: 1.875rem;
-                right: auto;
-                bottom: auto;
+                inset: 1.875rem auto auto 1.875rem;
                 background-color: transparent;
                 width: auto;
                 height: auto;
@@ -149,10 +146,7 @@
                 }
 
                 @include media-breakpoint-down(sm) {
-                  left: 1rem;
-                  top: 1rem;
-                  right: auto;
-                  bottom: auto;
+                  inset: 1rem auto auto 1rem;
 
                   .flaticon {
                     font-size: 1.5rem;
@@ -520,7 +514,7 @@
         background-color: transparent;
         font-weight: 500;
 
-        &:hover:after {
+        &:hover::after {
           width: 50%;
         }
 
@@ -722,7 +716,7 @@
             margin-left: 0;
           }
 
-          &:before {
+          &::before {
             content: "";
             border-bottom: 2px solid;
             display: block;
@@ -733,7 +727,7 @@
             bottom: 0;
           }
 
-          &:hover:before {
+          &:hover::before {
             width: 100%;
           }
         }
@@ -821,7 +815,7 @@
         line-height: 1.5rem;
         width: max-content;
 
-        &:before {
+        &::before {
           content: "";
           display: block;
           border-bottom: 2px solid;
@@ -832,7 +826,7 @@
           transition: all 0.3s ease;
         }
 
-        &:hover:before {
+        &:hover::before {
           width: 100%;
         }
       }
@@ -919,14 +913,14 @@
 
             .swiper-pagination {
               &-bullet {
-                &:after {
+                &::after {
                   color: #fff;
                 }
 
                 &-active {
                   border-color: #fff;
 
-                  &:after {
+                  &::after {
                     color: #fff;
                   }
                 }
@@ -1054,7 +1048,7 @@
   &__type-4 {
     .product-single {
       &__media {
-        &:before {
+        &::before {
           content: "";
           height: 100%;
           width: 100vw;
@@ -1077,16 +1071,19 @@
 
         &-item {
           max-height: 100vh;
+
           img {
             height: fit-content;
             max-height: 100vh;
             object-fit: contain;
             padding-top: 3rem;
           }
-          @media (min-width: 1000px) {
+
+          @media (width >= 1000px) {
             padding-top: 6.25rem;
             height: 100vh;
             scroll-snap-align: center;
+
             img {
               height: 100%;
               width: 100%;
@@ -1173,7 +1170,7 @@
           transition: all 0.3s ease;
           white-space: nowrap;
 
-          &:before {
+          &::before {
             content: "";
             display: block;
             border-bottom: 2px solid;
@@ -1187,7 +1184,7 @@
           &:hover {
             color: $primary;
 
-            &:before {
+            &::before {
               width: 100%;
             }
           }
@@ -1226,7 +1223,7 @@
           color: $secondary;
           transition: all 0.3s ease;
 
-          &:before {
+          &::before {
             content: "";
             display: block;
             border-bottom: 2px solid;
@@ -1240,7 +1237,7 @@
           &:hover {
             color: $primary;
 
-            &:before {
+            &::before {
               width: 100%;
             }
           }
@@ -1308,7 +1305,7 @@
       gap: 1.25rem;
       margin-bottom: 3.4375rem;
 
-      &:after {
+      &::after {
         content: "";
         display: block;
         width: 2.5rem;

@@ -5,6 +5,7 @@
 @mixin make-row($gutter: $grid-gutter-width) {
   --#{$variable-prefix}gutter-x: #{$gutter};
   --#{$variable-prefix}gutter-y: 0;
+
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--#{$variable-prefix}gutter-y) * -1); // stylelint-disable-line function-disallowed-list
@@ -15,6 +16,7 @@
 @mixin make-col-ready($gutter: $grid-gutter-width) {
   // Add box sizing if only the grid is loaded
   box-sizing: if(variable-exists(include-column-box-sizing) and $include-column-box-sizing, border-box, null);
+
   // Prevent columns from becoming too narrow when at smaller grid tiers by
   // always setting `width: 100%;`. This works because we set the width
   // later on to override this initial width.
@@ -38,6 +40,7 @@
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
   $num: $size / $columns;
+
   margin-left: if($num == 0, 0, percentage($num));
 }
 
@@ -69,7 +72,7 @@
       }
 
       .row-cols#{$infix}-auto > * {
-        @include make-col-auto();
+        @include make-col-auto;
       }
 
       @if $grid-row-columns > 0 {
@@ -81,7 +84,7 @@
       }
 
       .col#{$infix}-auto {
-        @include make-col-auto();
+        @include make-col-auto;
       }
 
       @if $columns > 0 {

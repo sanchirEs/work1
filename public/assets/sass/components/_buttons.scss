@@ -16,6 +16,7 @@
   user-select: none;
   background-color: $body-bg;
   border: $btn-border-width solid transparent;
+
   @include button-size(
     $btn-padding-y,
     $btn-padding-x,
@@ -23,11 +24,14 @@
     $btn-border-radius
   );
   @include transition($btn-transition);
+
   font-size: $btn-font-size * 0.875;
+
   @include media-breakpoint-down(sm) {
     padding-left: 1.125rem;
     padding-right: 1.125rem;
   }
+
   padding-top: $btn-padding-top * 0.75;
   padding-bottom: $btn-padding-bottom * 0.75;
 
@@ -74,6 +78,7 @@
   fieldset:disabled & {
     pointer-events: none;
     opacity: $btn-disabled-opacity;
+
     @include box-shadow(none);
   }
 
@@ -110,6 +115,7 @@
   $background: $border;
   $color: map-get($btn-beige, "color");
   $active-color: map-get($btn-beige, "active");
+
   @include button-variant(
     $background,
     $border,
@@ -125,6 +131,7 @@
   $background: $border;
   $color: $border;
   $active-color: map-get($btn-beige, "active");
+
   @include button-outline-variant(
     $color,
     $active-color,
@@ -139,6 +146,7 @@
   $background: $border;
   $color: map-get($btn-light, "color");
   $active-color: map-get($btn-light, "active");
+
   @include button-variant(
     $background,
     $border,
@@ -154,6 +162,7 @@
   $background: $border;
   $color: map-get($btn-light, "color");
   $active-color: map-get($btn-light, "active");
+
   @include button-outline-variant(
     $color,
     $active-color,
@@ -161,6 +170,7 @@
     $border,
     $active-color
   );
+
   border-color: $border;
 }
 
@@ -193,7 +203,7 @@
     color: $btn-link-disabled-color;
   }
 
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -203,23 +213,23 @@
     max-width: 100%;
     height: 2px;
     transition: $nav-link-underline-transition-s;
-    background-color: currentColor;
+    background-color: currentcolor;
   }
 
   &:hover,
   &.btn-link_active {
-    &:after {
+    &::after {
       width: $btn-link-active-bottom-width;
     }
   }
 
   &.default-underline {
-    &:after {
+    &::after {
       width: $btn-link-active-bottom-width;
     }
 
     &:hover {
-      &:after {
+      &::after {
         width: 100%;
       }
     }
@@ -229,18 +239,18 @@
 .btn-link_lg {
   &:hover,
   &.btn-link_active {
-    &:after {
+    &::after {
       width: calc(100% - 1rem);
     }
   }
 
   &.default-underline {
-    &:after {
+    &::after {
       width: 86%;
     }
 
     &:hover {
-      &:after {
+      &::after {
         width: 100%;
       }
     }
@@ -250,18 +260,18 @@
 .btn-link_md {
   &:hover,
   &.btn-link_active {
-    &:after {
+    &::after {
       width: 70%;
     }
   }
 
   &.default-underline {
-    &:after {
+    &::after {
       width: 70%;
     }
 
     &:hover {
-      &:after {
+      &::after {
         width: 100%;
       }
     }
@@ -271,18 +281,18 @@
 .btn-link_sm {
   &:hover,
   &.btn-link_active {
-    &:after {
+    &::after {
       width: 45%;
     }
   }
 
   &.default-underline {
-    &:after {
+    &::after {
       width: 45%;
     }
 
     &:hover {
-      &:after {
+      &::after {
         width: 100%;
       }
     }
@@ -292,7 +302,7 @@
 .btn-link_f {
   &:hover,
   &.btn-link_active {
-    &:after {
+    &::after {
       width: 100%;
     }
   }
@@ -335,6 +345,7 @@
     $btn-font-size-lg,
     $btn-border-radius-lg
   );
+
   line-height: $btn-line-height-lg;
 }
 
@@ -353,7 +364,7 @@
 
 .nav-icon {
   display: block;
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 // Icon button
@@ -373,13 +384,13 @@
   width: $swiper-pagination-width;
   height: $swiper-pagination-width;
   margin: 0 4px;
-  border: 2px solid currentColor;
+  border: 2px solid currentcolor;
   background-color: transparent;
   color: transparent;
   opacity: 1;
   outline: none;
 
-  &:after {
+  &::after {
     display: block;
     position: absolute;
     top: 50%;
@@ -389,7 +400,7 @@
     margin-top: -($swiper-pagination-dot-width / 2);
     margin-left: -($swiper-pagination-dot-width / 2);
     border-radius: 100%;
-    background-color: currentColor;
+    background-color: currentcolor;
     color: $swiper-pagination-color;
     content: "";
   }
@@ -400,14 +411,14 @@
   }
 }
 
-.swiper-pagination-bullets.dark-bullet .swiper-pagination-bullet:after {
+.swiper-pagination-bullets.dark-bullet .swiper-pagination-bullet::after {
   color: #222;
 }
 
 .swiper-pagination-bullet-active {
   color: $swiper-pagination-active-color;
 
-  &:after {
+  &::after {
     color: inherit;
   }
 }
@@ -433,7 +444,7 @@
   margin-bottom: 0.75rem;
   border-radius: 50%;
 
-  &:after {
+  &::after {
     display: block;
     position: absolute;
     top: 50%;
@@ -443,7 +454,7 @@
     margin-top: -0.5rem;
     margin-left: -0.5rem;
     border-radius: 100%;
-    background-color: currentColor;
+    background-color: currentcolor;
     color: inherit;
     content: "";
   }

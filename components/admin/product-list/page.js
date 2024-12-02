@@ -1,8 +1,8 @@
 // app/product-list/page.jsx
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
@@ -10,11 +10,11 @@ export default function ProductList() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
-    async function fetchProducts(page = 1, search = '', size = 10) {
+    async function fetchProducts(page = 1, search = "", size = 10) {
       setLoading(true);
       try {
         const res = await fetch(
@@ -27,7 +27,7 @@ export default function ProductList() {
         setTotalPages(data.totalPages);
         setCurrentPage(data.currentPage);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
       }
@@ -56,8 +56,8 @@ export default function ProductList() {
             which you can rely on to find the exact product you need.
           </div>
         </div>
-        <div className="dashboard-flex items-center justify-between gap10 flex-wrap">
-          <div className="dashboard-wg-filter flex-grow">
+        <div className="dashboard-flex dashboard-items-center dashboard-justify-between dashboard-gap10 dashboard-flex-wrap">
+          <div className="dashboard-wg-filter dashboard-flex-grow">
             <div className="dashboard-show">
               <div className="dashboard-text-tiny">Showing</div>
               <div className="dashboard-select">
@@ -96,15 +96,15 @@ export default function ProductList() {
             </form>
           </div>
           <Link
-            className="dashboard-tf-button style-1 w208"
-            href="/add-product"
+            className="dashboard-tf-button dashboard-style-1 dashboard-w208"
+            href="/admin/add_product"
           >
             <i className="dashboard-icon-plus" />
             Add new
           </Link>
         </div>
-        <div className="dashboard-wg-table table-product-list">
-          <ul className="dashboard-table-title flex gap20 mb-14">
+        <div className="dashboard-wg-table dashboard-table-product-list">
+          <ul className="dashboard-table-title dashboard-flex dashboard-gap20 dashboard-mb-14">
             <li>
               <div className="dashboard-body-title">Product</div>
             </li>
@@ -127,14 +127,29 @@ export default function ProductList() {
               <div className="dashboard-body-title">Action</div>
             </li>
           </ul>
-          <ul className="dashboard-flex flex-column">
+          <ul className="dashboard-flex flex-column pl-0">
             {products.map((product) => (
-              <li key={product.id} className="dashboard-product-item gap14">
-                <div className="dashboard-image no-bg">
-                  <img src="/images/products/41.png" alt="" />
+              <li
+                key={product.id}
+                className="dashboard-product-item dashboard-gap14"
+              >
+                <div className="dashboard-image dashboard-no-bg">
+                  <img
+                    src={product.images?.[0] || "/default-placeholder.png"}
+                    // alt={product.name || "Product image"}
+                    
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                      maxHeight: "80px", // Adjust the height as needed
+                      display: "block",
+                    }}
+                  />
                   {/* Replace with dynamic image if available */}
                 </div>
-                <div className="dashboard-flex items-center justify-between gap20 flex-grow">
+                <div className="dashboard-flex dashboard-items-center dashboard-justify-between dashboard-gap20 dashboard-flex-grow">
                   <div className="dashboard-name">
                     <Link
                       href={`/product/${product.id}`}
@@ -157,13 +172,13 @@ export default function ProductList() {
                     <div
                       className={
                         product.inventory && product.inventory.quantity > 0
-                          ? 'dashboard-block-available'
-                          : 'dashboard-block-not-available'
+                          ? "dashboard-block-available"
+                          : "dashboard-block-not-available"
                       }
                     >
                       {product.inventory && product.inventory.quantity > 0
-                        ? 'In stock'
-                        : 'Out of stock'}
+                        ? "In stock"
+                        : "Out of stock"}
                     </div>
                   </div>
                   <div className="dashboard-list-icon-function">
@@ -183,7 +198,7 @@ export default function ProductList() {
           </ul>
         </div>
         <div className="dashboard-divider" />
-        <div className="dashboard-flex items-center justify-between flex-wrap gap10">
+        <div className="dashboard-flex dashboard-items-center dashboard-justify-between dashboard-flex-wrap dashboard-gap10">
           <div className="dashboard-text-tiny">
             Showing page {currentPage} of {totalPages}
           </div>

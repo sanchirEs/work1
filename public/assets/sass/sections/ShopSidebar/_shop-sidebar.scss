@@ -32,8 +32,7 @@ $sidebar-space: 3.75rem;
   height: 100vh;
   padding: 0 $aside-padding-x / 2 1.75rem;
   transition: left .35s, right .35s;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden auto;
   z-index: $zindex-modal;
 
   &.aside_visible {

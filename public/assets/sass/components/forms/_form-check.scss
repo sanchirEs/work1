@@ -27,6 +27,7 @@
   border: $form-check-input-border;
   appearance: none;
   color-adjust: exact; // Keep themed appearance for print
+
   @include transition($form-check-transition);
 
   &[type="checkbox"] {
@@ -36,7 +37,8 @@
   &[type="radio"] {
     // stylelint-disable-next-line property-disallowed-list
     border-radius: $form-check-radio-border-radius;
-    &:after {
+
+    &::after {
       border-radius: $form-check-radio-border-radius;
     }
   }
@@ -45,7 +47,7 @@
     position: relative;
     border-width: $checkbox-border-width;
 
-    &:after {
+    &::after {
       content: '';
       display: block;
       position: absolute;
@@ -88,7 +90,7 @@
       background-image: none;
       background-color: $color-white;
 
-      &:after {
+      &::after {
         background-color: $checkbox-active-color;
       }
     }
@@ -138,7 +140,9 @@
     height: $form-switch-height;
     margin-top: 0;
     margin-left: $form-switch-padding-start * -1;
+
     @include border-radius($form-switch-border-radius);
+
     background-image: escape-svg($form-switch-bg-image);
     background-position: left center;
 

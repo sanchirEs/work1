@@ -1,0 +1,18 @@
+/* Error: Undefined variable.
+ *    ,
+ * 51 |       border-top-color: $popover-arrow-outer-color;
+ *    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   public\assets\sass\bootstrap\_popover.scss 51:25  @import
+ *   public\assets\sass\bootstrap\bootstrap.scss 36:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 51 \2502        border-top-color: $popover-arrow-outer-color;\a    \2502                          ^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   public\\assets\\sass\\bootstrap\\_popover.scss 51:25  @import\a   public\\assets\\sass\\bootstrap\\bootstrap.scss 36:9  root stylesheet";
+}

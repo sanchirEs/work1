@@ -14,6 +14,7 @@
 
       .page-title {
         @include font-size(3.75rem);
+
         font-weight: 700;
         text-transform: uppercase;
       }
@@ -21,10 +22,7 @@
       .title-bg {
         display: block;
         position: absolute;
-        left: 0.5rem;
-        right: 0.5rem;
-        top: 0.5rem;
-        bottom: 0.5rem;
+        inset: 0.5rem;
         z-index: -1;
 
         img {
@@ -103,7 +101,7 @@
           display: inline-block;
           font-weight: 500;
 
-          &:after {
+          &::after {
             content: "";
             display: block;
             width: 70%;
@@ -114,7 +112,7 @@
             transition: all 0.3s ease;
           }
 
-          &:hover:after {
+          &:hover::after {
             width: 100%;
           }
         }
@@ -203,7 +201,7 @@
           display: inline-block;
           font-weight: 500;
 
-          &:after {
+          &::after {
             content: "";
             display: block;
             width: 70%;
@@ -214,7 +212,7 @@
             transition: all 0.3s ease;
           }
 
-          &:hover:after {
+          &:hover::after {
             width: 100%;
           }
         }
@@ -373,9 +371,8 @@
       align-items: center;
       gap: 0.625rem;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-flow: column wrap;
       margin-bottom: 3.125rem;
-      flex-direction: column;
 
       @include media-breakpoint-up(lg) {
         flex-direction: row;
@@ -413,6 +410,7 @@
     }
   }
 }
+
 .blog-title-3 {
   font-size: 1.125rem !important;
   margin-bottom: 1.25rem !important;

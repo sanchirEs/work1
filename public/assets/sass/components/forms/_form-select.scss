@@ -6,15 +6,21 @@
 .form-select {
   display: block;
   width: 100%;
+
   @include text-padding($input-padding-y, $input-padding-x);
+
   padding-right: $input-padding-y * 2.5;
   font-family: $form-select-font-family;
+
   @include font-size($form-select-font-size);
+
   font-weight: $form-select-font-weight;
   line-height: $form-select-line-height;
   border: $form-select-border-width solid $form-select-border-color;
+
   @include border-radius($form-select-border-radius, 0);
   @include box-shadow($form-select-box-shadow);
+
   background-color: $form-select-bg;
   background-image: escape-svg($form-select-indicator);
   background-repeat: no-repeat;
@@ -27,6 +33,7 @@
   &:focus {
     border-color: $form-select-focus-border-color;
     outline: 0;
+
     @if $enable-shadows {
       @include box-shadow($form-select-box-shadow, $form-select-focus-box-shadow);
     } @else {
@@ -56,9 +63,12 @@
 
 .form-select-sm {
   width: auto;
+
   @include text-padding($input-padding-y-sm, $input-padding-x-sm);
+
   padding-right: $input-padding-x-sm * 1.8;
   background-position: $form-select-sm-bg-position;
+
   // padding-top: $input-padding-y-sm;
   // padding-bottom: $input-padding-y-sm;
   // padding-left: $form-select-padding-x-sm;
@@ -67,6 +77,7 @@
 
 .form-select-lg {
   @include text-padding($input-padding-y-lg, $input-padding-x-lg);
+
   // padding-top: $input-padding-y-lg;
   // padding-bottom: $input-padding-y-lg;
   // padding-left: $form-select-padding-x-lg;
@@ -101,7 +112,7 @@
     color: shift-color($body-color-secondary, 50%);
   }
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     width: $form-check-input-width;
@@ -112,7 +123,7 @@
     margin-right: 0.75rem;
   }
 
-  &:after {
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -129,11 +140,11 @@
 .mult-select__item_selected {
   color: $checkbox-active-color;
 
-  &:before {
+  &::before {
     color: $checkbox-active-color;
   }
 
-  &:after {
+  &::after {
     background-color: $checkbox-active-color;
   }
 }

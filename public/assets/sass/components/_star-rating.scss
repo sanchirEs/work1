@@ -15,9 +15,10 @@
     &.is-overed {
       fill: $rating-star_selected-color;
 
-      & ~ .star-rating__star-icon:not(.is-overed):not(.is-selected) {
+      & ~ .star-rating__star-icon:not(.is-overed, .is-selected) {
         fill: $rating-star-color;
       }
+
       & ~ .star-rating__star-icon.is-selected:not(.is-overed) {
         fill: $rating-star_overed-color;
       }

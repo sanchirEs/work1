@@ -8,29 +8,27 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-// Customers and Orders
 model Customer {
   id            Int             @id @default(autoincrement())
   email         String          @unique
   name          String
-  password      String
   role          UserRole        @default(CUSTOMER)
   createdAt     DateTime        @default(now())
-  orders        Order[]
+  password      String
   cart          Cart?
+  notifications Notification[]
+  orders        Order[]
   payments      Payment[]
   tickets       SupportTicket[]
-  notifications Notification[]
 }
 
-// Cart and Cart Items
 model Cart {
   id         Int        @id @default(autoincrement())
   customerId Int        @unique
-  cartItems  CartItem[]
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   customer   Customer   @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  cartItems  CartItem[]
 }
 
 model CartItem {
@@ -45,7 +43,6 @@ model CartItem {
   @@unique([cartId, productId])
 }
 
-// Products, Orders, and Production Tracking
 model Product {
   id               Int               @id @default(autoincrement())
   name             String
@@ -53,33 +50,31 @@ model Product {
   price            Decimal
   minBatchQty      Int               @default(100)
   orderCount       Int               @default(0)
-  orders           Order[]
-  productionStages ProductionStage[]
+  Campaign         Campaign[]
   cartItems        CartItem[]
+  orders           Order[]
   inventory        ProductInventory?
   batches          ProductionBatch[]
-
-  Campaign Campaign[]
+  productionStages ProductionStage[]
+  images           String[]
 }
 
 model Campaign {
-  id          Int               @id @default(autoincrement())
-  productId   Int               // Make productId required again
-  startDate   DateTime
-  endDate     DateTime
-  status      CampaignStatus    @default(ACTIVE)
-  type        CampaignType      @default(PLUSH)
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
-  product     Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
+  id        Int            @id @default(autoincrement())
+  startDate DateTime
+  endDate   DateTime
+  status    CampaignStatus @default(ACTIVE)
+  type      CampaignType   @default(PLUSH)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  productId Int
+  product   Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
-
-
 
 model ProductInventory {
   id        Int      @id @default(autoincrement())
   productId Int      @unique
-  quantity  Int // Stock level of this product
+  quantity  Int
   updatedAt DateTime @default(now()) @updatedAt
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
@@ -90,15 +85,15 @@ model Order {
   productId        Int
   quantity         Int
   status           OrderStatus       @default(PENDING)
-  payment          Payment?
-  batch            ProductionBatch?  @relation(fields: [batchid], references: [id])
   batchid          Int?
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
-  productionStages ProductionStage[]
+  notifications    Notification[]
+  batch            ProductionBatch?  @relation(fields: [batchid], references: [id])
   customer         Customer          @relation(fields: [customerId], references: [id], onDelete: Cascade)
   product          Product           @relation(fields: [productId], references: [id], onDelete: Cascade)
-  notifications    Notification[]
+  payment          Payment?
+  productionStages ProductionStage[]
 }
 
 model Payment {
@@ -115,18 +110,16 @@ model Payment {
   @@index([status])
 }
 
-// Production Batches for Minimum Orders
 model ProductionBatch {
   id            Int      @id @default(autoincrement())
   productId     Int
-  totalQuantity Int      @default(0) // Total items in batch
+  totalQuantity Int      @default(0)
   isReady       Boolean  @default(false)
   createdAt     DateTime @default(now())
-  orders        Order[] // Orders part of this batch
+  orders        Order[]
   product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
-// Production Stages
 model ProductionStage {
   id        Int              @id @default(autoincrement())
   orderId   Int
@@ -137,7 +130,6 @@ model ProductionStage {
   product   Product          @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
-// Notifications for Customer Updates
 model Notification {
   id         Int      @id @default(autoincrement())
   customerId Int
@@ -146,10 +138,9 @@ model Notification {
   sentAt     DateTime @default(now())
   readStatus Boolean  @default(false)
   customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
-  order      Order?   @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  order      Order?   @relation(fields: [orderId], references: [id])
 }
 
-// Support Ticket System for Customer Feedback
 model SupportTicket {
   id         Int          @id @default(autoincrement())
   customerId Int
@@ -161,7 +152,6 @@ model SupportTicket {
   customer   Customer     @relation(fields: [customerId], references: [id], onDelete: Cascade)
 }
 
-// Enums for User Roles, Order Status, Production Stages, Payment Status, and Support Ticket Status
 enum UserRole {
   CUSTOMER
   ADMIN
@@ -205,6 +195,6 @@ enum CampaignStatus {
 
 enum CampaignType {
   PLUSH
-  PETITION
   COMING_SOON
+  PETITION
 }

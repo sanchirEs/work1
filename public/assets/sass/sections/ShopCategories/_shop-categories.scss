@@ -5,6 +5,7 @@
 
   @include media-breakpoint-up(lg) {
     --item-space: #{$container-padding-x * 2};
+
     padding: var(--item-space);
   }
 

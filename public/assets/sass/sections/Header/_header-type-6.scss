@@ -16,7 +16,7 @@
     padding: $header-type-6-nav-padding;
 
     @include media-breakpoint-up(xl) {
-      margin: 0 -$navigation-item-padding-x;
+      margin: 0 (-$navigation-item-padding-x);
     }
   }
 

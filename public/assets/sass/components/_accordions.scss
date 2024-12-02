@@ -7,7 +7,9 @@
   border: $accordion-border-width solid $accordion-border-color;
   color: $accordion-button-active-color;
   background-color: $accordion-button-active-bg;
+
   @include font-size($content-title-font-size);
+
   font-weight: $accordion-button-font-weight;
   line-height: $accordion-button-line-height;
   outline: none;
@@ -40,6 +42,7 @@
   margin-left: auto;
   fill: $accordion-icon-color;
   transform: rotate(90deg);
+
   @include transition($accordion-icon-transition);
 
   .svg-path-vertical {
@@ -49,6 +52,7 @@
 
   .svg-path-horizontal {
     @include transition($accordion-icon-transition);
+
     opacity: 0;
   }
 

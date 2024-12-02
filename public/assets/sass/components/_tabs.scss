@@ -19,6 +19,7 @@
   line-height: $nav-link-line-height;
   text-decoration: if($link-decoration == none, null, none);
   outline: none;
+
   @include transition($nav-link-transition);
 
   &:hover,
@@ -45,7 +46,7 @@
     $nav-link-padding-bottom;
   color: $nav-tabs-link-color;
 
-  &:after {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -54,11 +55,12 @@
     width: 0;
     height: $nav-tabs-border-width;
     background-color: $nav-tabs-link-active-border;
+
     @include transition($nav-link-underline-transition-l);
   }
 
   &.theme-color {
-    &:after {
+    &::after {
       background-color: var(--theme-color);
     }
   }
@@ -69,7 +71,7 @@
   .nav-item.show & {
     color: $nav-tabs-link-active-color;
 
-    &:after {
+    &::after {
       width: subtract(100%, $nav-tabs-link-padding-x * 2);
     }
   }
@@ -79,7 +81,7 @@
     &:focus,
     &.active,
     .nav-item.show & {
-      &:after {
+      &::after {
         width: 2rem;
       }
     }
@@ -90,7 +92,7 @@
     &:focus,
     &.active,
     .nav-item.show & {
-      &:after {
+      &::after {
         width: calc((100% - #{$nav-tabs-link-padding-x} * 2) * 0.7);
       }
     }
@@ -105,19 +107,20 @@
 
 // Right lined links
 .nav-link_rline {
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 49%;
     left: 0;
-    width: 0px;
+    width: 0;
     height: 2px;
     background-color: $body-color;
+
     @include transition($nav-link-underline-transition-l);
   }
 
   &.active {
-    &:before {
+    &::before {
       width: 100%;
     }
   }
@@ -150,6 +153,7 @@
   .nav-link.active,
   .show > .nav-link {
     color: $nav-pills-link-active-color;
+
     @include gradient-bg($nav-pills-link-active-bg);
   }
 }
@@ -183,6 +187,7 @@
   > .tab-pane {
     display: none;
   }
+
   > .active {
     display: block;
   }

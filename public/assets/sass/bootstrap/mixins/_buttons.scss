@@ -18,21 +18,29 @@
   $disabled-color: color-contrast($disabled-background)
 ) {
   color: $color;
+
   @include gradient-bg($background);
+
   border-color: $border;
+
   @include box-shadow($btn-box-shadow);
 
   &:hover {
     color: $hover-color;
+
     @include gradient-bg($hover-background);
+
     border-color: $hover-border;
   }
 
   .btn-check:focus + &,
   &:focus {
     color: $hover-color;
+
     @include gradient-bg($hover-background);
+
     border-color: $hover-border;
+
     @if $enable-shadows {
       @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix($color, $border, 15%), .5));
     } @else {
@@ -48,6 +56,7 @@
   .show > &.dropdown-toggle {
     color: $active-color;
     background-color: $active-background;
+
     // Remove CSS gradients if they're enabled
     background-image: if($enable-gradients, none, null);
     border-color: $active-border;
@@ -66,6 +75,7 @@
   &.disabled {
     color: $disabled-color;
     background-color: $disabled-background;
+
     // Remove CSS gradients if they're enabled
     background-image: if($enable-gradients, none, null);
     border-color: $disabled-border;
@@ -122,7 +132,9 @@
 // Button sizes
 @mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
   padding: $padding-y $padding-x;
+
   @include font-size($font-size);
+
   // Manually declare to provide an override to the browser default
   @include border-radius($border-radius, 0);
 }

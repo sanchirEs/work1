@@ -9,10 +9,8 @@ $slideshow-type4-height: 37.5rem;
 $slideshow-type4-mobile-height: 26.25rem;
 $slideshow-type5-height: 40.625rem;
 $slideshow-type5-mobile-height: 26.25rem;
-
 $slideshow-small-height: 28.125rem;
 $slideshow-small-mobile-height: 20rem;
-
 $nav-icon-desk-size: 25px;
 $nav-icon-mobile-size: 10px;
 $nav-mobile-size: 35px;
@@ -46,9 +44,11 @@ $nav-mobile-size: 35px;
     &.type4 {
       height: $slideshow-type4-height;
     }
+
     &.type5 {
       height: $slideshow-type5-height;
     }
+
     &.slideshow-lg {
       height: $slideshow-lg-height;
     }
@@ -163,10 +163,7 @@ $nav-mobile-size: 35px;
 
   &.position-right-center {
     position: absolute;
-    left: auto;
-    right: 50%;
-    top: auto;
-    bottom: 1rem;
+    inset: auto 50% 1rem auto;
     transform: translateX(50%);
     display: flex;
     width: auto;
@@ -271,18 +268,18 @@ $nav-mobile-size: 35px;
     align-items: center;
     gap: 0.75rem;
 
-    &:before {
+    &::before {
       content: "";
       border-top: 1px solid $secondary;
       width: 2.3125rem;
       display: block;
     }
 
-    &:after {
+    &::after {
       display: none;
     }
 
-    &:first-child:before {
+    &:first-child::before {
       display: none;
     }
 
@@ -293,10 +290,7 @@ $nav-mobile-size: 35px;
 
   &.position-xxl-right-center {
     @include media-breakpoint-up(xxl) {
-      right: 0 !important;
-      top: 50% !important;
-      bottom: auto !important;
-      left: auto !important;
+      inset: 50% 0 auto auto !important;
       transform: translateY(-50%);
       flex-direction: column;
       margin: 0 1.125rem;
@@ -304,7 +298,7 @@ $nav-mobile-size: 35px;
       .swiper-pagination-bullet {
         flex-direction: column;
 
-        &:before {
+        &::before {
           border-top: 0;
           border-left: 1px solid #767676;
           width: 1px;
@@ -333,7 +327,7 @@ $nav-mobile-size: 35px;
   }
 
   .slideshow__prev {
-    &:after {
+    &::after {
       content: "";
       display: block;
       width: 1.875rem;
@@ -344,14 +338,14 @@ $nav-mobile-size: 35px;
     &:hover {
       color: $primary;
 
-      &:after {
+      &::after {
         width: 3.125rem;
       }
     }
   }
 
   .slideshow__next {
-    &:before {
+    &::before {
       content: "";
       display: block;
       width: 1.875rem;
@@ -362,7 +356,7 @@ $nav-mobile-size: 35px;
     &:hover {
       color: $primary;
 
-      &:before {
+      &::before {
         width: 3.125rem;
       }
     }

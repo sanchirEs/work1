@@ -1,5 +1,6 @@
 .mega-menu {
   border-top: $mega-menu-border;
+
   @include create-menu($mega-menu-padding, 100%);
 }
 

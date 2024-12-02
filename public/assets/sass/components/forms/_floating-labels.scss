@@ -4,6 +4,7 @@
   > .form-control,
   > .form-select {
     height: $form-floating-height;
+
     @include text-padding($input-padding-y-lg, $input-padding-x-lg);
   }
 
@@ -15,7 +16,9 @@
     pointer-events: none;
     border: $input-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
     transform-origin: 0 0;
+
     @include transition($form-floating-transition);
+
     color: $secondary;
   }
 
@@ -41,15 +44,16 @@
   > .form-control:not(:placeholder-shown),
   > .form-select {
     ~ label {
-      background-color: #ffffff;
+      background-color: #fff;
       color: $primary;
       transform: $form-floating-label-transform;
     }
   }
+
   // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
   > .form-control:-webkit-autofill {
     ~ label {
-      background-color: #ffffff;
+      background-color: #fff;
       color: $primary;
       transform: $form-floating-label-transform;
     }

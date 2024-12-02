@@ -7,8 +7,11 @@
   display: flex;
   align-items: center;
   width: 100%;
+
   @include border-radius(0);
+
   overflow-anchor: none;
+
   @include transition($accordion-transition);
 
   &::after {
@@ -19,6 +22,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     transform: $accordion-icon-transform;
+
     @include transition($accordion-icon-transition);
   }
 
@@ -35,8 +39,6 @@
   &:focus {
     z-index: 3;
     outline: 0;
-    // border-color: $accordion-button-focus-border-color;  // Not used in Uomo design
-    // box-shadow: $accordion-button-focus-box-shadow;      // Not used in Uomo design
   }
 }
 
@@ -45,23 +47,19 @@
 }
 
 .accordion-item {
-  // &:first-of-type {    // Uomo accordions don't have border-radius
-  //   .accordion-button {
-  //     @include border-top-radius($accordion-border-radius);
-  //   }
-  // }
-
   &:last-of-type {
     .accordion-button {
       // Only set a border-radius on the last item if the accordion is collapsed
       &.collapsed {
         border-bottom-width: $accordion-border-width;
-        // @include border-bottom-radius($accordion-border-radius); // Uomo accordions don't have border-radius
+
+        
       }
     }
 
     .accordion-collapse {
       border-bottom-width: $accordion-border-width;
+
       // @include border-bottom-radius($accordion-border-radius); // Uomo accordions don't have border-radius
     }
   }
@@ -81,6 +79,7 @@
   .accordion-button {
     border-right: 0;
     border-left: 0;
+
     @include border-radius(0);
   }
 
@@ -92,6 +91,7 @@
     &:first-of-type {
       .accordion-button {
         border-top-width: 0;
+
         @include border-top-radius(0);
       }
     }
@@ -99,6 +99,7 @@
     &:last-of-type {
       .accordion-button.collapsed {
         border-bottom-width: 0;
+
         @include border-bottom-radius(0);
       }
     }
